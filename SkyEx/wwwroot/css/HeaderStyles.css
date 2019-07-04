@@ -1,0 +1,120 @@
+﻿/* Стили хидера */
+/*стили для хидера*/
+/*стили для ссылок хидера и ссылок при наведении*/
+.titleHeader {
+    letter-spacing: 15px;
+    font-size: 300%;
+}
+/*стили для центрирования элементов*/
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.my-acc {
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.button-site {
+    background-color: #f16d7f;
+    padding: 12px 15px;
+    width: 100px;
+    margin-left: 20px;
+}
+/*эти стили очень важны для нижней линии хидера*/
+.content {
+    height: 100px;
+    border-bottom: 1px solid silver;
+}
+/*стили, чтобы убрать подчеркивание у ссылок а*/
+.content > .container > .row > .col-lg-2 > a {
+    text-decoration: none;
+}
+/*стили меню хидера*/
+/*стили очень нужные для горизонтального меню хидера*/
+.navbar-default {
+    display: flex;
+}
+/*ul {
+    padding: 5px;
+}
+
+li {
+    display: inline;
+    border-left: 1px solid #bbb;
+    padding: 0 2px 0 4px;
+}
+
+    li:first-child {
+        border: none;
+    }*/
+/*для слэша после li*/
+.breadcrumbs {
+    margin: 0;
+    padding: 0; /* Убираем отступы */
+}
+
+    .breadcrumbs li {
+        display: inline-block; /* Выстраиваем по горизонтали */
+        list-style: none;
+    }
+
+        .breadcrumbs li::before {
+            content: '|'; /* Разделитель */
+            margin-left: 5px; /* Отступ слева */
+            margin-right: 5px; /* Отступ справа */
+            color: #7f7f7f; /* Цвет разделителя */
+        }
+
+        .breadcrumbs li:first-child::before {
+            content: ''; /* Убираем разделитель для первого пункта */
+        }
+.navbar-default {
+    border-radius: 0;
+    padding: 1%;
+    padding-top: 0;
+    font-weight: 900;
+}
+.navbar-collapse > ul > li > a {
+    text-decoration: none;    
+}
+/* Стили для анимации подчеркивания ссылок меню хидера */
+.main_menu {
+    display: flex;
+    margin-top: 20px;
+}
+
+    .main_menu > ul {
+        margin: 0 auto;
+        padding: 0;
+        display: inline-flex;
+    }
+
+        .main_menu > ul > li {
+            padding: 0px 20px 0px;
+            list-style-type: none;
+        }
+
+            .main_menu > ul > li > a {
+                color: black;
+                text-decoration: none;
+                font-family: "Open Sans",Helvetica,Verdana,"Lucida Grande",sans-serif;
+                font-variant: normal;
+                font-size: 16px;
+            }
+
+            .main_menu > ul > li:not(:last-child) {
+                border-right: 2px solid black;
+            }

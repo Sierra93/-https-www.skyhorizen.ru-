@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> SkyEx </title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/MainStyles.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/HeaderStyles.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/FooterStyles.css" rel="stylesheet" asp-append-version="true" />
+    @* Нужно для анимации подчеркивания ссылок хидера *@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" />
+    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+
+</head>
+<body>
+    @* Блок хидера *@
+    <nav id="idNav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+
+            @*<!—Само меню-->*@
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#" class="ui-box bottom-inOutSpread"> ПОРТФОЛИО </a></li>
+                    <li><a href="#" class="ui-box bottom-inOutSpread"> МОИ&nbsp;УСЛУГИ </a></li>
+                    <li><a href="#" class="ui-box bottom-inOutSpread"> КОНТАКТЫ </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @* Блок обо мне *@
+    <div class="context">
+        <div class="col-lg-8">
+            <h3> Здравствуйте! </h3>
+            <p> Меня зовут Антон. Я живу в Москве, и являюсь частным веб-разработчиком. Опыт в разработке сайтов и веб-приложений 3.5 года, поэтому мне есть, что вам предложить. Имею большой опыт в разработке сайтов и веб-приложений. </p>
+            <p> Профессионально занимаюсь разработкой сайтов разной степени сложности — от посадочных страниц до больших e-commerce продуктов. </p>            
+        </div>
+        <div class="col=lg-4">
+            <img class="img-thumbnail" src="~/images/ya.jpg" alt="my_foto" />
+        </div>
+    </div>
+    @* Блок как я работаю *@
+    <div class="col-lg-12">
+        <h3 id="idWork" class="text-center"> Как происходит работа со мной? </h3>
+    </div>
+    <div class="panels">
+        <div class="col-lg-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-body"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Оставляете заявку </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-body"> Уточняю детали вашего проекта </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-body"> Разработка макета, верстка и программирование </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default text-center">
+                <div class="panel-body"> Покупка домена, размещение на хостинге, передача проекта в вашу собственность </div>
+            </div>
+        </div>
+    </div>
+    @* Блок мои услуги *@
+    <div class="col-lg-12">
+
+    </div>
+    @* Блок мои работы *@
+    <div class="col-lg-12">
+
+    </div>
+    @* Блок футера *@
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted text-center">Copyright © 2019 skyexception.ru - Разработка адаптивных сайтов. Все права защищены. </p>
+        </div>
+    </footer>
+</body>
+</html>
