@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 10px;
+    /*margin: 10px 10px;*/
 }
 
 .my-acc {
@@ -28,7 +28,7 @@
 }
 
 .button-site {
-    background-color: #f16d7f;
+    /*background-color: #f16d7f;*/
     padding: 12px 15px;
     width: 100px;
     margin-left: 20px;
@@ -38,10 +38,10 @@
     height: 100px;
     border-bottom: 1px solid silver;
 }
-/*стили, чтобы убрать подчеркивание у ссылок а*/
-.content > .container > .row > .col-lg-2 > a {
-    text-decoration: none;
-}
+    /*стили, чтобы убрать подчеркивание у ссылок а*/
+    .content > .container > .row > .col-lg-2 > a {
+        text-decoration: none;
+    }
 /*стили меню хидера*/
 /*стили очень нужные для горизонтального меню хидера*/
 .navbar-default {
@@ -81,14 +81,16 @@ li {
         .breadcrumbs li:first-child::before {
             content: ''; /* Убираем разделитель для первого пункта */
         }
+
 .navbar-default {
     border-radius: 0;
     padding: 1%;
     padding-top: 0;
     font-weight: 900;
 }
+
 .navbar-collapse > ul > li > a {
-    text-decoration: none;    
+    text-decoration: none;
 }
 /* Стили для анимации подчеркивания ссылок меню хидера */
 .main_menu {
@@ -118,3 +120,114 @@ li {
             .main_menu > ul > li:not(:last-child) {
                 border-right: 2px solid black;
             }
+/*=====================================================================================*/
+/*стили для ссылок хидера и ссылок при наведении*/
+.header a, a:hover {
+    /*color: #f0ad4e;
+    text-decoration: none;*/
+    background-color: none;
+}
+
+.header h1 {
+    letter-spacing: 15px;
+    font-size: 300%;
+}
+
+.header p {
+    /*color: white !important;*/
+    font-size: 90%;
+    letter-spacing: 3px;
+}
+/*стили для ссылок меню*/
+.nav-pills > li.active > a, nav-pills > li.active > a:focus, nav-pills > li.active > a:hover {
+    /*color: #fff;
+    background-color: #346270;*/
+    color: black;
+    text-decoration: none;
+}
+
+.nav-pills > li > a {
+    color: black;
+}
+    /*цвет фона при наведении на ссылку меню*/
+    .nav-pills > li > a:hover {
+        /*background-color: #246370;*/
+        background-color: white;
+    }
+/*отступ у ссылок меню со всех сторон*/
+.navbar-default {
+    padding: 1%;
+    border-radius: 0;
+    width: 100%;
+    border-bottom: 1px solid silver;
+}
+/*запретить обтекание с правой и левой стороны*/
+.clear {
+    clear: both;
+    width: 63px;
+}
+/*стили для блока с фильмами*/ /*в том числе для того, чтобы картинки увеличивались при уменьшении экрана*/
+.films_block {
+    text-align: center;
+}
+    /*стили для картинок*/
+    .films_block img {
+        margin-bottom: 5%;
+        border-radius: 5px; /*загругление углов картинок*/
+        /*border: solid 5px #dad7d5;*/
+        width: 100%;
+    }
+/*стили для лэйблов картинок*/
+.film_label {
+    padding: 2%;
+    margin-bottom: 4%;
+}
+/*стили для блока с отступом после первой строки с изображениями*/
+.margin-8 {
+    margin-top: 8%;
+}
+/*стили для инпута поиска*/
+.form-control {
+    border-radius: 0px;
+}
+/*стили для иконок под трейлером с рейтингом и т.д*/
+.info-block {
+    font-size: 20%;
+}
+
+    .info-block.badge {
+        font-size: 80%;
+    }
+
+    .info-block span {
+        margin-right: 3%;
+    }
+
+textarea.form-control {
+    height: 200px;
+}
+/*стили для таблицы*/
+.table tbody > tr > td.vert-align {
+    vertical-align: middle;
+}
+/*медиа-запрос для вертикально отображения меню при уменьшении экрана и отцентровки логотипа и слогана*/
+@media (max-width: 767px) {
+    /*для вертикального размещения меню*/
+    .nav-pills > li {
+        float: none;
+    }
+    /*центруем ссылки меню*/
+    .nav-pills {
+        text-align: center;
+    }
+
+    .header h1 {
+        letter-spacing: 5px; /*межбуквенный интервал*/
+        font-size: 280%;
+    }
+
+    .header {
+        text-align: center;
+    }
+}
+
