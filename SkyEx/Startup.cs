@@ -47,7 +47,13 @@ namespace SkyEx {
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=FileUpload}/{action=Index}/{id?}");
+            });
+            // Роут в админку
+            app.UseMvc(routes => {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Admin}/{action=Index}/{id?}");
             });
         }
     }

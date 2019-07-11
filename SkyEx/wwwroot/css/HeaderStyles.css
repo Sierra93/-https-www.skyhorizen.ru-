@@ -18,7 +18,7 @@
     font-weight: 400;
     text-decoration: none;
     color: white;
-    font-family: 'Lato', sans-serif;
+    font-family: "PT Sans";
 }
 
 .header-right {
@@ -112,7 +112,7 @@ li {
             .main_menu > ul > li > a {
                 color: black;
                 text-decoration: none;
-                font-family: "Open Sans",Helvetica,Verdana,"Lucida Grande",sans-serif;
+                font-family: "PT Sans";               
                 font-variant: normal;
                 font-size: 16px;
             }

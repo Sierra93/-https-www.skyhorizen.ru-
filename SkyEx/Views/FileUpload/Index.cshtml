@@ -1,0 +1,258 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> SkyEx </title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/MainStyles.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/HeaderStyles.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/FooterStyles.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/MediaStyles.css" rel="stylesheet" asp-append-version="true" />
+    @* Нужно для анимации подчеркивания ссылок хидера *@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" />
+    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+
+</head>
+<body>
+    @* Блок хидера *@
+    @* container-fluid - растягивает хидер на всю ширину экрана *@
+    <div class="container-fluid">
+        <div class="row">
+            @* меню хидера *@
+            @* nav - помещает навигацию сайта и отдельные ссылки *@
+            <div role="navigation" class="navbar navbar-default">
+                @* элементы меню *@
+                <div class="container">
+                    @* реализация бургера при маленьком экране *@
+                    <div class="navbar-header header">
+                        @* логотип и слоган *@
+                        <div class="container">
+                            <div class="row">
+
+                            </div>
+                        </div>
+                        @* data-target="#navbarCollapse" - при нажатии на кнопку мы будем отображать блок с id = navbarCollapse, т.е наше меню *@
+                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                            <span class="sr-only"> Toogle navigation </span>
+                            <span class="icon-bar"> </span>
+                            <span class="icon-bar"> </span>
+                            <span class="icon-bar"> </span>
+                        </button>
+                    </div>
+                    @* navbar-right - прижимает навигацию к правому краю *@
+                    @* здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
+                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                        @* список меню *@
+                        @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
+                        <ul class="nav nav-pills">
+                            <li><a href="#" class="ui-box bottom-inOutSpread"> ПОРТФОЛИО </a></li>
+                            <li><a href="#" class="ui-box bottom-inOutSpread"> МОИ&nbsp;УСЛУГИ </a></li>
+                            <li><a href="#" class="ui-box bottom-inOutSpread"> КОНТАКТЫ </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @* Блок, в который нужно всегда оборачивать весь контент страницы, иначе не будет работать адаптивность *@
+    <div class="wrapper">
+        @* Блок обо мне *@
+        <div class="col-lg-8">
+            <h3> Здравствуйте! </h3>
+            <p> Меня зовут Антон. Я живу в Москве, и являюсь частным веб-разработчиком. Опыт в разработке сайтов и веб-приложений 3.5 года, поэтому мне есть, что вам предложить. </p>
+            <p> Профессионально занимаюсь разработкой сайтов разной степени сложности — от посадочных страниц до больших e-commerce продуктов. </p>
+        </div>
+        <div class="col-lg-4">
+            <img class="img-circle" src="~/images/ya.jpg" alt="my_foto" />
+        </div>
+        @* Блок почему частный веб-разработчик выгоднее? *@
+        <div class="col-lg-12">
+            <h2 class="text-center"> Почему частный веб-разработчик выгоднее? </h2>
+        </div>
+
+        <div class="col-lg-4">
+            <p> Дизайн-студии и рекламные агентства берут гораздо большие суммы, потому что цена их конечного продукта складывается из зарплаты штата сотрудников, стоимости аренды офиса, налогов. А кто это оплачивает – конечно же, заказчик. </p>
+            <p> И, поверьте, дорого – не всегда значит хорошо и качественно. </p>
+            <p> Также из несомненных плюсов: непосредственно личный контакт заказчика с исполнителем, без посредников в виде менеджера. Очень часто при работе с менеджером получается «глухой телефон»: менеджер может неправильно истолковать слова заказчика, не выяснить детали, не донести все задачи и пожелания, да мало ли что еще... </p>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-4">
+            <p> У меня достаточно опыта: дизайн, back-end и front-end разработка, владение HTML/CSS/Javascript/Bootstrap, jQuery + AJAX. ASP.NET Core MVC + C# + MS SQL Server или MySQL. </p>
+            <p> Я могу все, что нужно для сайта, который будет работать и приносить вам прибыль: от создания дизайна и программирования до наполнения контентом и продвижения в поисковых системах, кроме того, обеспечу вам техническую поддержку. </p>
+        </div>
+
+        @* Блок преимущества работы со мной *@
+        <div class="col-lg-12">
+            <h2 class="text-center"> Преимущества работы со мной </h2>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Совершенно без предоплаты. Все исходные файлы получаете после оплаты. При необходимости могу подписать договор </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Работаю сам, на звонки отвечаю сам, ни с какими веб-студиями или подрядчиками не сотрудничаю, всегда на связи </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Оплата за результат, стоимость называю до начала разработки сайта </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Консультации всегда бесплатно </p>
+                </div>
+            </div>
+        </div>
+        @* Блок Как происходит работа со мной? *@
+        <div class="col-lg-12">
+            <h2 class="text-center"> Как происходит работа со мной? </h2>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Оставляете заявку </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Работаю в соответствии с ТЗ (техническое задание). Если у вас нет ТЗ, свяжитесь со мной и я вышлю вам необходимые вопросы для выполнения проекта </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Верстка и программирование </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center"> Покупка домена, размещение на хостинге, после оплаты заказа передача проекта в вашу собственность </p>
+                </div>
+            </div>
+        </div>
+        @* Блок мои услуги *@
+        <div class="col-lg-12">
+            <h2 class="text-center"> Мои услуги </h2>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-body"> <p class="text-center"> Одностраничный сайт (Landing Page) </p> </div>
+                    <p class="text-center"> 3-4 дня </p>
+                    <p class="text-center"> от 12 000 руб. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-body"> <p class="text-center"> Сайт визитка </p> </div>
+                    <p class="text-center"> 2-3 дня </p>
+                    <p class="text-center"> от 7 000 руб. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-body"> <p class="text-center"> Корпоративный сайт </p> </div>
+                    <p class="text-center"> 1-2 недели </p>
+                    <p class="text-center"> от 15 000 руб. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-body"> <p class="text-center"> Интернет-магазин </p> </div>
+                    <p class="text-center"> 3-4 недели </p>
+                    <p class="text-center"> от 20 000 руб. </p>
+                </div>
+            </div>
+        </div>
+        @* Блок дополнительные услуги *@
+        <div class="col-lg-12">
+            <h2 class="text-center"> Дополнительные услуги </h2>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-body"> <p class="text-center"> Продвижение сайтов </p> </div>
+                    <p class="text-center"> от 10 000 руб. (в мес.) </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-body"> <p class="text-center"> Настройка Яндекс.Директ </p> </div>
+                    <p class="text-center"> от 4 000 руб. (в мес.) </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-body"> <p class="text-center"> Настройка Google Adwords </p> </div>
+                    <p class="text-center"> от 4 000 руб. (в мес.) </p>
+                </div>
+            </div>
+        </div>
+        @* Блок мои работы *@
+        <div class="col-lg-12">
+            <h2 class="text-center"> Мои работы </h2>
+        </div>
+        @* Выгрузка изображений моих работ *@
+            @model IEnumerable<SkyEx.Models.FileModel>
+            @foreach (var item in Model) {
+                <div id="idImages" class="col-lg-3">
+                    <img src="@Url.Content(item.ImagePath.Replace("wwwroot","~"))" /> <br />
+                    <p id="idTitle" class="text-center"> @item.Title </p>
+                </div>
+            }
+    </div>
+    @* Блок футера *@
+    @* Просто пустой блок над футером необходимый для отступа над футером *@
+    <div class="col-lg-12" id="emptyBlock">
+
+    </div>
+    <footer class="footer">
+        <div class="col-lg-3 col-xs-6" id="idFoot">
+            <label class="text-muted text-left">
+                © 2019 Тимошенко Антон <br />
+                <a href="mailto:#"> skyexx@mail.ru </a>
+            </label>
+        </div>
+        <div class="col-lg-6" id="idFoot">
+
+        </div>
+        <div class="col-lg-3 col-xs-6" id="idFoot">
+            <label class="text-muted text-right"> +7(985)-683-80-46 <br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
+        </div>
+    </footer>
+</body>
+</html>
