@@ -1,6 +1,6 @@
 ﻿/* Общие стили */
 /* Стили для моего фото */
-.img-circle {
+#idImage {
     width: 60.25%;
     float: right;
     font-family: "PT Sans";
@@ -53,4 +53,12 @@ h2 {
     margin-right: 0px;
     margin-bottom: 5px;
     margin-top: 5px;
+}
+#idTTitle {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/* Стили для кнопки ВВЕРХ */
+.btn-up {
+    text-align: center;
 }

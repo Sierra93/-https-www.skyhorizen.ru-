@@ -18,7 +18,20 @@
     <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
     <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a.scrollto").click(function () {
+                var elementClick = $(this).attr("href")
+                var destination = $(elementClick).offset().top;
+                jQuery("html:not(:animated),body:not(:animated)").animate({
+                    scrollTop: destination
+                }, 800);
+                return false;
+            });
+        });
+    </script>
 </head>
 <body>
     @* Блок хидера *@
@@ -52,9 +65,9 @@
                         @* список меню *@
                         @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
                         <ul class="nav nav-pills">
-                            <li><a href="#" class="ui-box bottom-inOutSpread"> ПОРТФОЛИО </a></li>
-                            <li><a href="#" class="ui-box bottom-inOutSpread"> МОИ&nbsp;УСЛУГИ </a></li>
-                            <li><a href="#" class="ui-box bottom-inOutSpread"> КОНТАКТЫ </a></li>
+                            <li><a href="#works" class="ui-box bottom-inOutSpread scrollto"> ПОРТФОЛИО </a></li>
+                            <li><a href="#uslugi" class="ui-box bottom-inOutSpread scrollto"> МОИ&nbsp;УСЛУГИ </a></li>
+                            <li><a href="#contacts" class="ui-box bottom-inOutSpread scrollto"> КОНТАКТЫ </a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,34 +78,17 @@
     <div class="wrapper">
         @* Блок обо мне *@
         <div class="col-lg-8">
+            <p> <a id="up"></a> </p>
             <h3> Здравствуйте! </h3>
             <p> Меня зовут Антон. Я живу в Москве, и являюсь частным веб-разработчиком. Опыт в разработке сайтов и веб-приложений 3.5 года, поэтому мне есть, что вам предложить. </p>
             <p> Профессионально занимаюсь разработкой сайтов разной степени сложности — от посадочных страниц до больших e-commerce продуктов. </p>
         </div>
         <div class="col-lg-4">
-            <img class="img-circle" src="~/images/ya.jpg" alt="my_foto" />
-        </div>
-        @* Блок почему частный веб-разработчик выгоднее? *@
-        <div class="col-lg-12">
-            <h2 class="text-center"> Почему частный веб-разработчик выгоднее? </h2>
-        </div>
-
-        <div class="col-lg-4">
-            <p> Дизайн-студии и рекламные агентства берут гораздо большие суммы, потому что цена их конечного продукта складывается из зарплаты штата сотрудников, стоимости аренды офиса, налогов. А кто это оплачивает – конечно же, заказчик. </p>
-            <p> И, поверьте, дорого – не всегда значит хорошо и качественно. </p>
-            <p> Также из несомненных плюсов: непосредственно личный контакт заказчика с исполнителем, без посредников в виде менеджера. Очень часто при работе с менеджером получается «глухой телефон»: менеджер может неправильно истолковать слова заказчика, не выяснить детали, не донести все задачи и пожелания, да мало ли что еще... </p>
-        </div>
-        <div class="col-lg-2">
-
-        </div>
-        <div class="col-lg-4">
-            <p> У меня достаточно опыта: дизайн, back-end и front-end разработка, владение HTML/CSS/Javascript/Bootstrap, jQuery + AJAX. ASP.NET Core MVC + C# + MS SQL Server или MySQL. </p>
-            <p> Я могу все, что нужно для сайта, который будет работать и приносить вам прибыль: от создания дизайна и программирования до наполнения контентом и продвижения в поисковых системах, кроме того, обеспечу вам техническую поддержку. </p>
-        </div>
-
+            <img id="idImage" class="img img-thumbnail" src="~/images/ya.jpg" alt="my_foto" />
+        </div>        
         @* Блок преимущества работы со мной *@
         <div class="col-lg-12">
-            <h2 class="text-center"> Преимущества работы со мной </h2>
+            <h2 id="idTTitle" class="text-center"> Преимущества работы со мной </h2>
         </div>
         <div class="col-lg-3">
             <div class="panel panel-default">
@@ -124,7 +120,7 @@
         </div>
         @* Блок Как происходит работа со мной? *@
         <div class="col-lg-12">
-            <h2 class="text-center"> Как происходит работа со мной? </h2>
+            <h2 id="idTTitle" class="text-center"> Как происходит работа со мной? </h2>
         </div>
         <div class="col-lg-3">
             <div class="panel panel-default">
@@ -156,7 +152,8 @@
         </div>
         @* Блок мои услуги *@
         <div class="col-lg-12">
-            <h2 class="text-center"> Мои услуги </h2>
+            <p> <a id="uslugi"></a> </p>
+            <h2 id="idTTitle" class="text-center"> Мои услуги </h2>
         </div>
         <div class="col-lg-3">
             <div class="panel panel-default">
@@ -196,7 +193,7 @@
         </div>
         @* Блок дополнительные услуги *@
         <div class="col-lg-12">
-            <h2 class="text-center"> Дополнительные услуги </h2>
+            <h2 id="idTTitle" class="text-center"> Дополнительные услуги </h2>
         </div>
         <div class="col-lg-4">
             <div class="panel panel-default">
@@ -224,16 +221,40 @@
         </div>
         @* Блок мои работы *@
         <div class="col-lg-12">
-            <h2 class="text-center"> Мои работы </h2>
+            <p><a id="works"></a></p>
+            <h2 id="idTTitle" class="text-center"> Мои работы </h2>
         </div>
         @* Выгрузка изображений моих работ *@
-            @model IEnumerable<SkyEx.Models.FileModel>
-            @foreach (var item in Model) {
-                <div id="idImages" class="col-lg-3">
-                    <img src="@Url.Content(item.ImagePath.Replace("wwwroot","~"))" /> <br />
-                    <p id="idTitle" class="text-center"> @item.Title </p>
-                </div>
-            }
+        @model IEnumerable<SkyEx.Models.FileModel>
+        @foreach (var item in Model) {
+            <div id="idImages" class="col-lg-3">
+                <img class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
+                <p id="idTitle" class="text-center"> @item.Title </p>
+            </div>
+        }
+        @* Блок почему частный веб-разработчик выгоднее? *@
+        <div class="col-lg-12">
+            <h2 id="idTTitle" class="text-center"> Почему частный веб-разработчик выгоднее? </h2>
+        </div>
+
+        <div class="col-lg-4">
+            <p> Дизайн-студии и рекламные агентства берут гораздо большие суммы, потому что цена их конечного продукта складывается из зарплаты штата сотрудников, стоимости аренды офиса, налогов. А кто это оплачивает – конечно же, заказчик. </p>
+            <p> И, поверьте, дорого – не всегда значит хорошо и качественно. </p>
+            <p> Также из несомненных плюсов: непосредственно личный контакт заказчика с исполнителем, без посредников в виде менеджера. Очень часто при работе с менеджером получается «глухой телефон»: менеджер может неправильно истолковать слова заказчика, не выяснить детали, не донести все задачи и пожелания, да мало ли что еще... </p>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-4">
+            <p> У меня достаточно опыта: дизайн, back-end и front-end разработка, владение HTML/CSS/Javascript/Bootstrap, jQuery + AJAX. ASP.NET Core MVC + C# + MS SQL Server или MySQL. </p>
+            <p> Я могу все, что нужно для сайта, который будет работать и приносить вам прибыль: от создания дизайна и программирования до наполнения контентом и продвижения в поисковых системах, кроме того, обеспечу вам техническую поддержку. </p>
+        </div>
+        @* Блок с кнопкой для подъема вверх *@
+        <div class="col-lg-12">
+            <div class="btn-up">
+                <a href="#up" class="btn btn-default btn-lg scrollto"> ВВЕРХ </a>
+            </div>
+        </div>
     </div>
     @* Блок футера *@
     @* Просто пустой блок над футером необходимый для отступа над футером *@
@@ -254,5 +275,6 @@
             <label class="text-muted text-right"> +7(985)-683-80-46 <br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>
