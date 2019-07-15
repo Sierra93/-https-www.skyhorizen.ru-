@@ -230,4 +230,7 @@ textarea.form-control {
         text-align: center;
     }
 }
-
+.btnRequest {
+    display: flex;
+    align-items: center;
+}

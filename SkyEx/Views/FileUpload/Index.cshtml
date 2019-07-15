@@ -1,12 +1,8 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> SkyEx </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/MainStyles.css" rel="stylesheet" asp-append-version="true" />
@@ -14,43 +10,20 @@
     <link href="~/css/FooterStyles.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/MediaStyles.css" rel="stylesheet" asp-append-version="true" />
     @* Нужно для анимации подчеркивания ссылок хидера *@
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" />
-    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
-    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("a.scrollto").click(function () {
-                var elementClick = $(this).attr("href")
-                var destination = $(elementClick).offset().top;
-                jQuery("html:not(:animated),body:not(:animated)").animate({
-                    scrollTop: destination
-                }, 800);
-                return false;
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" />    
 </head>
 <body>
     @* Блок хидера *@
     @* container-fluid - растягивает хидер на всю ширину экрана *@
     <div class="container-fluid">
         <div class="row">
-            @* меню хидера *@
-            @* nav - помещает навигацию сайта и отдельные ссылки *@
+            @* Меню хидера *@
+            @* nav - помещает навигацию сайта и отдельные ссылки *@            
             <div role="navigation" class="navbar navbar-default">
-                @* элементы меню *@
+                @* Элементы меню *@
                 <div class="container">
-                    @* реализация бургера при маленьком экране *@
+                    @* Реализация бургера при маленьком экране *@
                     <div class="navbar-header header">
-                        @* логотип и слоган *@
-                        <div class="container">
-                            <div class="row">
-
-                            </div>
-                        </div>
                         @* data-target="#navbarCollapse" - при нажатии на кнопку мы будем отображать блок с id = navbarCollapse, т.е наше меню *@
                         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                             <span class="sr-only"> Toogle navigation </span>
@@ -61,31 +34,31 @@
                     </div>
                     @* navbar-right - прижимает навигацию к правому краю *@
                     @* здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
-                    <div id="navbarCollapse" class="collapse navbar-collapse">
-                        @* список меню *@
-                        @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
-                        <ul class="nav nav-pills">
-                            <li><a href="#works" class="ui-box bottom-inOutSpread scrollto"> ПОРТФОЛИО </a></li>
-                            <li><a href="#uslugi" class="ui-box bottom-inOutSpread scrollto"> МОИ&nbsp;УСЛУГИ </a></li>
-                            <li><a href="#contacts" class="ui-box bottom-inOutSpread scrollto"> КОНТАКТЫ </a></li>
-                        </ul>
+                            <div id="navbarCollapse" class="collapse navbar-collapse">
+                                @* список меню *@
+                                @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
+                                <p> <a id="up"></a> </p>
+                                <ul class="nav nav-pills">
+                                    <li><a href="#works" class="ui-box bottom-inOutSpread scrollto"> ПОРТФОЛИО </a></li>
+                                    <li><a href="#uslugi" class="ui-box bottom-inOutSpread scrollto"> МОИ&nbsp;УСЛУГИ </a></li>
+                                    <li><a href="#contacts" class="ui-box bottom-inOutSpread scrollto"> КОНТАКТЫ </a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     @* Блок, в который нужно всегда оборачивать весь контент страницы, иначе не будет работать адаптивность *@
     <div class="wrapper">
         @* Блок обо мне *@
-        <div class="col-lg-8">
-            <p> <a id="up"></a> </p>
+        <div class="col-lg-9">            
             <h3> Здравствуйте! </h3>
             <p> Меня зовут Антон. Я живу в Москве, и являюсь частным веб-разработчиком. Опыт в разработке сайтов и веб-приложений 3.5 года, поэтому мне есть, что вам предложить. </p>
             <p> Профессионально занимаюсь разработкой сайтов разной степени сложности — от посадочных страниц до больших e-commerce продуктов. </p>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <img id="idImage" class="img img-thumbnail" src="~/images/ya.jpg" alt="my_foto" />
-        </div>        
+        </div>
         @* Блок преимущества работы со мной *@
         <div class="col-lg-12">
             <h2 id="idTTitle" class="text-center"> Преимущества работы со мной </h2>
@@ -125,14 +98,14 @@
         <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="text-center"> Оставляете заявку </p>
+                    <p class="text-center"> Оставляете заявку через форму, связываетесь со мной по телефону, WhatsApp или по E-mail </p>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="text-center"> Работаю в соответствии с ТЗ (техническое задание). Если у вас нет ТЗ, свяжитесь со мной и я вышлю вам необходимые вопросы для выполнения проекта </p>
+                    <p class="text-center"> Работаю в соответствии с ТЗ (техническое задание). Если у вас нет ТЗ, то вы можете <a href="#"> скачать мой бриф. </a> </p>
                 </div>
             </div>
         </div>
@@ -146,7 +119,7 @@
         <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="text-center"> Покупка домена, размещение на хостинге, после оплаты заказа передача проекта в вашу собственность </p>
+                    <p class="text-center"> Покупка домена, размещение на хостинге, после оплаты работы передача проекта в вашу собственность </p>
                 </div>
             </div>
         </div>
@@ -252,29 +225,55 @@
         @* Блок с кнопкой для подъема вверх *@
         <div class="col-lg-12">
             <div class="btn-up">
-                <a href="#up" class="btn btn-default btn-lg scrollto"> ВВЕРХ </a>
+                <a href="#up" class="btn btn-default btn-lg scrollto glyphicon glyphicon-arrow-up"> ВВЕРХ </a>
             </div>
         </div>
     </div>
-    @* Блок футера *@
     @* Просто пустой блок над футером необходимый для отступа над футером *@
     <div class="col-lg-12" id="emptyBlock">
 
     </div>
+    @* Блок футера *@
     <footer class="footer">
-        <div class="col-lg-3 col-xs-6" id="idFoot">
-            <label class="text-muted text-left">
-                © 2019 Тимошенко Антон <br />
-                <a href="mailto:#"> skyexx@mail.ru </a>
-            </label>
-        </div>
-        <div class="col-lg-6" id="idFoot">
+        <p> <a id="contacts"></a> </p>
+            <div class="col-lg-2">
 
-        </div>
-        <div class="col-lg-3 col-xs-6" id="idFoot">
-            <label class="text-muted text-right"> +7(985)-683-80-46 <br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
-        </div>
+            </div>
+        @* Блок слева *@
+            <div class="col-lg-4 col-xs-6">
+                <h3 class="text-muted"> Свяжитесь со мной </h3>
+                <label class="text-muted">
+                    © 2019 Тимошенко Антон <br />
+                    <label> E-mail:  </label> <a href="mailto:#"> skyexx@mail.ru </a>
+                </label> <br />
+                <label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
+            </div>
+        @* Блок справа *@
+            <div class="col-lg-4 col-xs-6">
+                <h3 class="text-muted text-center"> Или заполните форму </h3>
+                <div id="idPanelBody" class="panel-body">
+                    <form role="form" class="text-center">
+                        <div class="form-group text-center">
+                            <input type="text" class="form-control input-lg" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="password" class="form-control input-lg" placeholder="E-mail или телефон">
+                        </div>
+
+                        <button type="submit" id="idBtnApplyRequest" class="btn btn-danger text-center"> Заказать сайт </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
     </footer>
+    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/SlowScroll.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>

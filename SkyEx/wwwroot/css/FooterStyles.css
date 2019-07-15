@@ -25,6 +25,54 @@ body {
 }
 
 .text-muted {
-    margin-right: 15%;
-    margin-left: 15%;
+    /*argin-right: 10%;
+    margin-left: 10%;*/
+}
+#idFootRight {
+    text-align: right;
+}
+#idFootLeft {
+    text-align: left;
+}
+/* Стили кнопки Заказать сайт */
+#idBtnApplyRequest {
+    /*margin-bottom: 10px;*/
+}
+/* Стили паннелей футера */
+/*стили панели*/
+.margin-8 {
+    margin-top: 8%;
+}
+#idPanelBody {
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+}
+
+.panel-info > .panel-heading {
+    /*background-color: #f0ad4e;*/
+    color: black;
+    border-color: transparent;
+    margin-top: 50px;
+}
+/*стили для списка*/
+.list-group-item-warning {
+    color: #8a6d3b;
+    background-color: #f9f9f9;
+}
+
+.badge {
+    background-color: #000000;
+}
+
+.sidebar-header {
+    font-size: 120%;
+    letter-spacing: 2px;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.input-lg {
+    font-size: 14px;
 }
