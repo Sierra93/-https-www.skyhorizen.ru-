@@ -2,15 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/MainStyles.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/HeaderStyles.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/FooterStyles.css" rel="stylesheet" asp-append-version="true" />
-    <link href="~/css/MediaStyles.css" rel="stylesheet" asp-append-version="true" />
     @* Нужно для анимации подчеркивания ссылок хидера *@
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" />    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" />
+    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/SlowScroll.js"></script>
+    <script src="~/js/GetRequest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
     @* Блок хидера *@
@@ -18,7 +25,7 @@
     <div class="container-fluid">
         <div class="row">
             @* Меню хидера *@
-            @* nav - помещает навигацию сайта и отдельные ссылки *@            
+            @* nav - помещает навигацию сайта и отдельные ссылки *@
             <div role="navigation" class="navbar navbar-default">
                 @* Элементы меню *@
                 <div class="container">
@@ -33,21 +40,23 @@
                         </button>
                     </div>
                     @* navbar-right - прижимает навигацию к правому краю *@
-                    @* здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
-                            <div id="navbarCollapse" class="collapse navbar-collapse">
-                                @* список меню *@
-                                @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
-                                <p> <a id="up"></a> </p>
-                                <ul class="nav nav-pills">
-                                    <li><a href="#works" class="ui-box bottom-inOutSpread scrollto"> ПОРТФОЛИО </a></li>
-                                    <li><a href="#uslugi" class="ui-box bottom-inOutSpread scrollto"> МОИ&nbsp;УСЛУГИ </a></li>
-                                    <li><a href="#contacts" class="ui-box bottom-inOutSpread scrollto"> КОНТАКТЫ </a></li>
-                                </ul>
-                            </div>
+                    @* Здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
+                    <div class="col-lg-12">
+                        <div id="navbarCollapse" class="collapse navbar-collapse">
+                            @* список меню *@
+                            @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
+                            <p> <a id="up"></a> </p>
+                            <ul class="nav nav-pills">
+                                <li><a href="#works" class="ui-box bottom-inOutSpread scrollto"> ПОРТФОЛИО </a></li>
+                                <li><a href="#uslugi" class="ui-box bottom-inOutSpread scrollto"> МОИ&nbsp;УСЛУГИ </a></li>
+                                <li><a href="#contacts" class="ui-box bottom-inOutSpread scrollto"> КОНТАКТЫ </a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
     @* Блок, в который нужно всегда оборачивать весь контент страницы, иначе не будет работать адаптивность *@
     <div class="wrapper">
         @* Блок обо мне *@
@@ -56,7 +65,7 @@
             <p> Меня зовут Антон. Я живу в Москве, и являюсь частным веб-разработчиком. Опыт в разработке сайтов и веб-приложений 3.5 года, поэтому мне есть, что вам предложить. </p>
             <p> Профессионально занимаюсь разработкой сайтов разной степени сложности — от посадочных страниц до больших e-commerce продуктов. </p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-10">
             <img id="idImage" class="img img-thumbnail" src="~/images/ya.jpg" alt="my_foto" />
         </div>
         @* Блок преимущества работы со мной *@
@@ -200,7 +209,7 @@
         @* Выгрузка изображений моих работ *@
         @model IEnumerable<SkyEx.Models.FileModel>
         @foreach (var item in Model) {
-            <div id="idImages" class="col-lg-3">
+            <div id="idImages" class="col-lg-3 col-xs-6">
                 <img class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
                 <p id="idTitle" class="text-center"> @item.Title </p>
             </div>
@@ -254,13 +263,15 @@
                 <div id="idPanelBody" class="panel-body">
                     <form role="form" class="text-center">
                         <div class="form-group text-center">
-                            <input type="text" class="form-control input-lg" placeholder="Ваше имя">
+                            <input id="idName" type="text" value="" class="form-control input-lg" placeholder="Ваше имя" />
                         </div>
                         <div class="form-group text-center">
-                            <input type="password" class="form-control input-lg" placeholder="E-mail или телефон">
+                            <input id="idEmailOrNumber" type="text" class="form-control input-lg" placeholder="E-mail или телефон" />
                         </div>
-
-                        <button type="submit" id="idBtnApplyRequest" class="btn btn-danger text-center"> Заказать сайт </button>
+                        <div class="form-group text-center">
+                            <textarea id="idMultiInput" name="for-project" cols="40" rows="40" class="form-control input-lg"> Коротко о проекте </textarea>
+                        </div>
+                        <button type="button" id="idBtnApplyRequest" class="btn btn-danger text-center" onclick="onPressGetRequest()"> Заказать сайт </button>
                     </form>
                 </div>
             </div>
@@ -268,12 +279,5 @@
 
             </div>
     </footer>
-    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
-    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/js/SlowScroll.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>
