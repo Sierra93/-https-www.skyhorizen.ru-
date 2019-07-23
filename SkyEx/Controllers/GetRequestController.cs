@@ -69,7 +69,8 @@ namespace SkyEx.Controllers {
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("skyexx@mail.ru");
             mailMessage.To.Add("skyexx@mail.ru");
-            mailMessage.Body = "Имя: " + request.sUserName + "\n" +
+            mailMessage.Body = 
+                "Имя: " + request.sUserName + "\n" +
                 "E-mail или телефон: " + request.sEmailOrNumber + "\n" +
                 "Коротко о проекте: " + request.sMultiTextRequest;
             mailMessage.Subject = "Новая заявка";
