@@ -18,11 +18,18 @@ function onPressGetRequest(oEvent) {
             sMultiTextRequest: sMultiText
         },
         success: function(data) {
-        if (data = "OK") { alert("Спасибо! Заявка отправлена"); }
-            console.log("Заявка отправлена");
+            if (data === "OK") { 
+                //alert("Спасибо! Заявка отправлена"); 
+                console.log("Заявка отправлена");
+            }
+            else { 
+                //alert("Не все обязательные поля заполнены"); 
+                console.log("Не все обязательные поля заполнены");
+                return;
+            }            
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.log("Ошибка отправки заявки");
         }
-    });
+    });    
 };

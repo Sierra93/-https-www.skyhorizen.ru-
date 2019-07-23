@@ -154,7 +154,7 @@ li {
     border-radius: 0;
     width: 100%;
     border-bottom: 1px solid silver;
-    padding-top: 0;
+    /*padding-top: 0;*/
     font-weight: 900;
     display: flex;    
 }
