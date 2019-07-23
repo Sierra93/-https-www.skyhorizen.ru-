@@ -82,14 +82,17 @@ body {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    box-shadow: 0 0 10px black;
 }
 #idEmailOrNumber {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    box-shadow: 0 0 10px black;
 }
 #idMultiInput {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    box-shadow: 0 0 10px black;
 }

@@ -231,8 +231,4 @@ textarea.form-control {
     display: flex;
     align-items: center;
 }
-.panel-default {
-    padding: 0px;
-    height: 200px;
-    align-items: center;
-}
+

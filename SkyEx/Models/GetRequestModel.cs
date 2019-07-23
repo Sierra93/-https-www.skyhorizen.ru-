@@ -7,7 +7,7 @@ using MimeKit;
 using MailKit.Net.Smtp;
 
 namespace SkyEx.Models {
-    // Класс модели заявок
+    // Модель заявок
     public class GetRequestModel {
         public int ID { get; set; }
         public string sUserName { get; set; }

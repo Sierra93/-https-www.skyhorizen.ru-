@@ -17,18 +17,23 @@ function onPressGetRequest(oEvent) {
             sEmailOrNumber: sEmail,
             sMultiTextRequest: sMultiText
         },
-        success: function(data) {
+        success: function (data) {
+            // Если успешно
             if (data === "OK") { 
+                // В случае успешной отправки, очищаем все поля
+                document.getElementById("idName").value = "";
+                document.getElementById("idEmailOrNumber").value = "";
+                document.getElementById("idMultiInput").value = "";
                 swal("Спасибо! Заявка отправлена!", "В ближайшее время я свяжусь с вами", "success");
-                console.log("Заявка отправлена");
+                console.log("request send success");
             }
             else { 
-                console.log("Не все обязательные поля заполнены");
+                swal("Не все обязательные поля заполнены!", "", "error");
                 return;
             }            
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log("Ошибка отправки заявки");
+            console.log("request send error");
         }
     });    
 };

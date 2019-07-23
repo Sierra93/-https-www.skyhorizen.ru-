@@ -52,7 +52,7 @@ h2 {
 #idImages {
     margin-right: 0px;
     margin-bottom: 5px;
-    margin-top: 5px;
+    margin-top: 5px;    
 }
 #idTTitle {
     margin-top: 50px;
@@ -62,4 +62,12 @@ h2 {
 .btn-up {
     text-align: center;
     margin-bottom: 30px;
+}
+/* Стили для панелей с описаниями */
+.panel-default {
+    padding: 0px;
+    height: 220px;
+    align-items: center;
+    /*box-shadow: 12px 12px 8px -4px black;*/
+    box-shadow: 0 0 10px black;
 }
