@@ -19,11 +19,10 @@ function onPressGetRequest(oEvent) {
         },
         success: function(data) {
             if (data === "OK") { 
-                //alert("Спасибо! Заявка отправлена"); 
+                swal("Спасибо! Заявка отправлена!", "В ближайшее время я свяжусь с вами", "success");
                 console.log("Заявка отправлена");
             }
             else { 
-                //alert("Не все обязательные поля заполнены"); 
                 console.log("Не все обязательные поля заполнены");
                 return;
             }            
