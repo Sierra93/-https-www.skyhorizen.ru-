@@ -24,7 +24,7 @@ body {
 }
 
 #emptyBlock {
-    margin-top: 475px;
+    margin-top: 490px;
 }
 
 .wrapper {
@@ -66,8 +66,12 @@ h2 {
 /* Стили для панелей с описаниями */
 .panel-default {
     padding: 0px;
-    height: 220px;
+    height: 260px;
     align-items: center;
     /*box-shadow: 12px 12px 8px -4px black;*/
     box-shadow: 0 0 10px black;
+    display: flex;
+    justify-content: center;
 }
+
+

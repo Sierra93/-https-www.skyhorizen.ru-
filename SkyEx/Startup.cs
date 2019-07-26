@@ -26,7 +26,7 @@ namespace SkyEx {
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -35,15 +35,14 @@ namespace SkyEx {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
-            else {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
-
+            //else {
+            //    app.UseExceptionHandler("/Home/Error");
+            //    app.UseHsts();
+            //}
+            app.UseMvc();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
-
+            app.UseCookiePolicy();            
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",

@@ -231,4 +231,8 @@ textarea.form-control {
     display: flex;
     align-items: center;
 }
-
+/* Стили для того, чтобы убрать отступ якорю в хидере */
+.up {
+    margin: 0;
+    padding: 0;
+}
