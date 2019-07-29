@@ -73,7 +73,7 @@ namespace SkyEx.Controllers {
                 "E-mail или телефон: " + request.sEmailOrNumber + "\n" +
                 "Коротко о проекте: " + request.sMultiTextRequest;
             mailMessage.Subject = "Новая заявка";
-            client.Send(mailMessage);
+            client.Send(mailMessage);            
             return Json(request);
         }
     }
