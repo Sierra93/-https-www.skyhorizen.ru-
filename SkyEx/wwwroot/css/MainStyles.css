@@ -51,8 +51,9 @@ h2 {
 /* Отступы между изображениями */
 #idImages {
     margin-right: 0px;
-    margin-bottom: 5px;
-    margin-top: 5px;    
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding-right: 3px;
 }
 #idTTitle {
     margin-top: 50px;
@@ -73,5 +74,33 @@ h2 {
     display: flex;
     justify-content: center;
 }
+/* Дополнительные стили для изображений при наведении */
+.bw {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    /*-ms-transition: all 1s ease;*/
+    transition: all 1s ease;
+}
+.pic {
+    height: 188px;
+    width: 180px;
+    overflow: hidden;
+    margin: 9px;
+    border: 10px solid #fff;
+    border: 10px solid #eee\9;
+    -webkit-box-shadow: 2px 3px 10px #6E6E6E;
+    box-shadow: 2px 3px 10px #6E6E6E;
+    float: left;
+}
+/* Стили для выравнивания изображений на всех экранах */
+.col-xs-6 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+    .col-xs-6 > .idTitle {
+        font-size: 12px;
+    }
 
 

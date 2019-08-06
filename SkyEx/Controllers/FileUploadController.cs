@@ -11,7 +11,7 @@ using System.IO;
 namespace SkyEx.Controllers {
     // В этом контроллере реализован функционал загрузки и выгрузке моих работ из БД на основании папки
     public class FileUploadController : Controller {
-        string connectionString = "Server=u499383.mssql.masterhost.ru,1433;Initial Catalog=u499383_skyexdb;Persist Security Info=False;User ID=u499383;Password=inessen9hoo;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;Connection Timeout=30";
+        string connectionString = "Server=skyhorizen.ru,1433; Initial Catalog=u0772479_skydb; Persist Security Info=False; User ID=u0772479_admin; Password=K3sxb30*; MultipleActiveResultSets=False; Encrypt=True; TrustServerCertificate=true; Connection Timeout=30";
         public IActionResult Index() {
             // Выводим данные из БД в указанную вью
             var model = FetchImageFromDB();
@@ -38,7 +38,7 @@ namespace SkyEx.Controllers {
             using (var con = new SqlConnection(connectionString)) {
                 con.Open();
                 // Записываем изображения в БД
-                using (var com = new SqlCommand("INSERT INTO AllWorksInMyPortfolio(TITLE, IMAGE_PATH) VALUES('" + user_title + "', '" + path + "')", con)) {
+                using (var com = new SqlCommand("INSERT INTO Portfolio(TITLE, IMAGE_PATH) VALUES('" + user_title + "', '" + path + "')", con)) {
                     try {
                         com.ExecuteNonQuery();
                     }
@@ -53,7 +53,7 @@ namespace SkyEx.Controllers {
             List<FileModel> imagePath = new List<FileModel>();  // Создаем коллекцию на основе полей модели
             using (var con = new SqlConnection(connectionString)) {
                 con.Open();
-                using (var com = new SqlCommand("SELECT TITLE, IMAGE_PATH FROM AllWorksInMyPortfolio", con)) {
+                using (var com = new SqlCommand("SELECT TITLE, IMAGE_PATH FROM Portfolio", con)) {
                     using (var reader = com.ExecuteReader()) {
                         if (reader.HasRows) {
                             while (reader.Read()) {

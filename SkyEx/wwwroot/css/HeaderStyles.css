@@ -236,3 +236,8 @@ textarea.form-control {
     margin: 0;
     padding: 0;
 }
+/* Стили чтобы бургер не прыгал */
+.navbar-header {
+    display: flex;
+    justify-content: center;
+}
