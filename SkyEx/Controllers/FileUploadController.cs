@@ -19,7 +19,7 @@ namespace SkyEx.Controllers {
         }
         // Прописываем путь загружаемых файлов
         [HttpPost]
-        public async Task<IActionResult> UploadImage(IFormCollection form, string user_title) {
+        public async Task<IActionResult> UploadImage(IFormCollection form, string user_title, string full_name, string link_site) {
             string storePath = "wwwroot/images/";   // Путь к папке с изображениями
             if (form.Files == null || form.Files[0].Length == 0)
                 return RedirectToAction("Index");
@@ -30,15 +30,16 @@ namespace SkyEx.Controllers {
             using (var stream = new FileStream(path, FileMode.Create)) {
                 await form.Files[0].CopyToAsync(stream);
             }
-            StoreInDB(storePath + form.Files[0].FileName, user_title);
+            StoreInDB(storePath + form.Files[0].FileName, user_title, full_name, link_site);
             return RedirectToAction("Index");
         }
         // Записываем данные в БД
-        public void StoreInDB(string path, string user_title) {
+        public void StoreInDB(string path, string user_title, string full_name, string link_site) {
             using (var con = new SqlConnection(connectionString)) {
                 con.Open();
                 // Записываем изображения в БД
-                using (var com = new SqlCommand("INSERT INTO Portfolio(TITLE, IMAGE_PATH) VALUES('" + user_title + "', '" + path + "')", con)) {
+                using (var com = new SqlCommand("INSERT INTO Portfolio(TITLE, IMAGE_PATH, FULL_NAME, LINK_SITE) VALUES" +
+                    "('" + user_title + "', '" + full_name + "', '" + link_site + "', '" + path + "')", con)) {
                     try {
                         com.ExecuteNonQuery();
                     }
@@ -53,13 +54,15 @@ namespace SkyEx.Controllers {
             List<FileModel> imagePath = new List<FileModel>();  // Создаем коллекцию на основе полей модели
             using (var con = new SqlConnection(connectionString)) {
                 con.Open();
-                using (var com = new SqlCommand("SELECT TITLE, IMAGE_PATH FROM Portfolio", con)) {
+                using (var com = new SqlCommand("SELECT TITLE, IMAGE_PATH, FULL_NAME, LINK_SITE FROM Portfolio", con)) {
                     using (var reader = com.ExecuteReader()) {
                         if (reader.HasRows) {
                             while (reader.Read()) {
                                 imagePath.Add(new FileModel {
                                     Title = reader["TITLE"].ToString(),
-                                    ImagePath = reader["IMAGE_PATH"].ToString()
+                                    ImagePath = reader["IMAGE_PATH"].ToString(),
+                                    FullName = reader["FULL_NAME"].ToString(),
+                                    LinkSite = reader["LINK_SITE"].ToString()
                                 });
                             }
                         }
