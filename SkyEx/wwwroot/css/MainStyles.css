@@ -5,7 +5,7 @@
     /*float: right;*/
     width: 260px;
     height: 260px;
-    font-family: "PT Sans";
+    font-family: 'Open Sans',sans-serif,Arial;
     border-radius: 50%;
     border: #d9edf7 solid 10px;
     /*display: flex;
@@ -44,50 +44,62 @@
 }
 /* Стили для отступов слева и справа страницы */
 .obo_mne {
-    font-family: "PT Sans";
+    font-family: 'Open Sans',sans-serif,Arial;
     font-size: 14px;
     line-height: 1.625;
 }
 
 p {
-    font-family: "PT Sans";    
+    font-family: 'Open Sans',sans-serif,Arial;
     font-size: 20px;
     line-height: 1.625;
 }
 
 body {
-    font-family: "PT Sans";
+    /*font-family: "PT Sans";*/
+    font-family: 'Open Sans',sans-serif,Arial;
     overflow-x: hidden;
     /*background: #56425B;*/
     /*background-color: rgb(34, 34, 34);*/
     color: white;
-    z-index: 1; 
+    /*background: -webkit-gradient(linear,left top,left bottom,from(#782d66),to(#5c2d75));
+    background: -webkit-linear-gradient(top,#782d66,#5c2d75);
+    background: -o-linear-gradient(top,#782d66,#5c2d75);
+    background: linear-gradient(to bottom,#782DFF,#5c2d75);*/
+    /*background-image: linear-gradient(to bottom, #782dff, #6653ff, #5c6dff, #5d81fe, #6a93f6, #6692f5, #6190f4, #5d8ff3, #3e7bfa, #1a66fd, #004dfe, #022dfb);*/
+    background-image: linear-gradient(to bottom, #782dff, #8028fa, #8623f5, #8c1df1, #9216ec, #8039f4, #6c4cf9, #575bfd, #0075ff, #0089fe, #0099f4, #08a6e6);
 }
 #idPreim {
     /*background: -webkit-gradient(linear,left top,left bottom,from(#f55f49),to(#782d66));
     background: -webkit-linear-gradient(top,#f55f49,#782d66);
     background: -o-linear-gradient(top,#f55f49,#782d66);
     background: linear-gradient(to bottom,#f55f49,#782d66);*/
-    background: -webkit-gradient(linear,left top,left bottom,from(#007ac0),to(#0c9d5f));
-    background: -webkit-linear-gradient(top,#007ac0,#0c9d5f);
-    background: -o-linear-gradient(top,#007ac0,#0c9d5f);
-    background: linear-gradient(to bottom,#007ac0,#0c9d5f);
-}
-#idHowWorkMe {
-    background: -webkit-gradient(linear,left top,left bottom,from(#782d66),to(#5c2d75));
-    background: -webkit-linear-gradient(top,#782d66,#5c2d75);
-    background: -o-linear-gradient(top,#782d66,#5c2d75);
-    background: linear-gradient(to bottom,#782d66,#5c2d75);
-}
-#idMyUslugi {   
+/* Было */
     /*background: -webkit-gradient(linear,left top,left bottom,from(#007ac0),to(#0c9d5f));
     background: -webkit-linear-gradient(top,#007ac0,#0c9d5f);
     background: -o-linear-gradient(top,#007ac0,#0c9d5f);
     background: linear-gradient(to bottom,#007ac0,#0c9d5f);*/
-    background: -webkit-gradient(linear,left top,left bottom,from(#f55f49),to(#782d66));
+/*=========================*/
+    /*background: -webkit-gradient(linear,left top,left bottom,from(#782d66),to(#5c2d75));
+    background: -webkit-linear-gradient(top,#782d66,#5c2d75);
+    background: -o-linear-gradient(top,#782d66,#5c2d75);
+    background: linear-gradient(to bottom,#782DFF,#5c2d75);*/
+}
+#idHowWorkMe {
+    /*background: -webkit-gradient(linear,left top,left bottom,from(#782d66),to(#5c2d75));
+    background: -webkit-linear-gradient(top,#782d66,#5c2d75);
+    background: -o-linear-gradient(top,#782d66,#5c2d75);
+    background: linear-gradient(to bottom,#782d66,#5c2d75);*/
+}
+#idMyUslugi {
+    /*background: -webkit-gradient(linear,left top,left bottom,from(#007ac0),to(#0c9d5f));
+    background: -webkit-linear-gradient(top,#007ac0,#0c9d5f);
+    background: -o-linear-gradient(top,#007ac0,#0c9d5f);
+    background: linear-gradient(to bottom,#007ac0,#0c9d5f);*/
+    /*background: -webkit-gradient(linear,left top,left bottom,from(#f55f49),to(#782d66));
     background: -webkit-linear-gradient(top,#f55f49,#782d66);
     background: -o-linear-gradient(top,#f55f49,#782d66);
-    background: linear-gradient(to bottom,#f55f49,#782d66);
+    background: linear-gradient(to bottom,#f55f49,#782d66);*/
 }
 #idDopUslugi {
     /*background: -webkit-gradient(linear,left top,left bottom,from(#0c9d5f),to(#00605c));
@@ -102,17 +114,17 @@ body {
     
 }
 #idPortfolio {
-    background-image: -webkit-gradient(linear,left top,left bottom,from(#5c2d75),to(#007ac0));
+    /*background-image: -webkit-gradient(linear,left top,left bottom,from(#5c2d75),to(#007ac0));
     background-image: -webkit-linear-gradient(top,#5c2d75,#007ac0);
     background-image: -o-linear-gradient(top,#5c2d75,#007ac0);
-    background-image: linear-gradient(to bottom,#5c2d75,#007ac0);
+    background-image: linear-gradient(to bottom,#5c2d75,#007ac0);*/
 }
 #emptyBlock {
     margin-top: 650px;
-    background-image: -webkit-gradient(linear,left top,left bottom,from(#5c2d75),to(#007ac0));
+    /*background-image: -webkit-gradient(linear,left top,left bottom,from(#5c2d75),to(#007ac0));
     background-image: -webkit-linear-gradient(top,#5c2d75,#007ac0);
     background-image: -o-linear-gradient(top,#5c2d75,#007ac0);
-    background-image: linear-gradient(to bottom,#5c2d75,#007ac0);
+    background-image: linear-gradient(to bottom,#5c2d75,#007ac0);*/
 }
 .fon {
     /*background: #E0FFFF;*/
@@ -152,10 +164,10 @@ body {
     margin-left: 10%;*/
     color: white;
 }
-.cont {
-    /*margin-right: 10%;
-    margin-left: 10%;*/
-    color: white;
+/* Стили для того, чтобы были отступы у контента справа и слева не затрагивая градиенты */
+.content {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 /* =============== */
 h2 {
@@ -330,21 +342,3 @@ h2 {
     line-height: 20px;
     bottom: 190px;
 }
-/*#fon {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #1F334C;
-    z-index: 0
-}
-
-#content {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: none;
-    z-index: 999999
-}*/

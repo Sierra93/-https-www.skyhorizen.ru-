@@ -18,7 +18,7 @@
     font-weight: 400;
     text-decoration: none;
     color: white;
-    font-family: "PT Sans";
+    font-family: 'Open Sans',sans-serif,Arial;
 }
 
 .header-right {
@@ -34,10 +34,10 @@
     margin-left: 20px;
 }
 /*эти стили очень важны для нижней линии хидера*/
-.content {
+/*.content {
     height: 100px;
-    /*border-bottom: 1px solid silver;*/
-}
+    border-bottom: 1px solid silver;
+}*/
     /*стили, чтобы убрать подчеркивание у ссылок а*/
     .content > .container > .row > .col-lg-2 > a {
         text-decoration: none;
@@ -78,7 +78,6 @@ li {
         .breadcrumbs li:first-child::before {
             content: ''; /* Убираем разделитель для первого пункта */
         }
-
 .navbar-collapse > ul > li > a {
     text-decoration: none;
 }
@@ -102,7 +101,7 @@ li {
             .main_menu > ul > li > a {
                 color: black;
                 text-decoration: none;
-                font-family: "PT Sans";               
+                font-family: 'Open Sans',sans-serif,Arial;
                 font-variant: normal;
                 font-size: 16px;
             }
@@ -249,3 +248,13 @@ textarea.form-control {
     background: #e91e63 !important;
     padding: 1%;
 }
+/*.container-fluid {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+}
+.container-fluid.default {
+    position: fixed;
+}*/
