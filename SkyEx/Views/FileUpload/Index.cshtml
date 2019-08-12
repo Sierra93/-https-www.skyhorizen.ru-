@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Быстро. Недорого. Адаптивно. Частный веб-разработчик Тимошенко Антон </title>
+    <title> Частный Web-разработчик Тимошенко Антон </title>
     <meta name="yandex-verification" content="572250a50f996c4e" />
     <meta name="yandex-verification" content="834d062f6beb3e2b" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
@@ -45,14 +45,15 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/54692815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <p class="up"> <a id="up"></a> </p>
-    <div class="fon revealator-zoomin revealator-once revealator-below">
+    <div class="fon">
         <div class="col-lg-12 col-xs-12 my-class">
             <img id="idImage" class="" src="~/images/ya.jpg" alt="my_foto" />
         </div>
         <div class="col-lg-12 col-xs-12">
             <div class="info">
                 <h1> Антон Тимошенко </h1>
-                <h2> Частный Веб-разработчик </h2>
+                <h2> Частный Web-разработчик </h2>
+                <button type="button" class="btn fancy btn-1 btn-lg btnWrite"> Заказать сайт </button>
             </div>
         </div>
         <div class="gotosection">
@@ -61,7 +62,7 @@
     </div>
     @* Блок хидера *@
     @* container-fluid - растягивает хидер на всю ширину экрана *@
-    <div class="container-fluid clearfix">
+    <div class="container-fluid">
         @*<div id="header" class="clearfix">*@
         <div class="row">
             @* Меню хидера *@
@@ -87,8 +88,8 @@
                         @* Список меню *@
                         @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
                         <ul class="nav nav-pills">
-                            <li><a href="#" class="ui-box bottom-inOutSpread scrollto"> ОБО&nbsp;МНЕ </a></li>
-                            <li><a href="#" class="ui-box bottom-inOutSpread scrollto"> РЕЗЮМЕ </a></li>
+                            <li><a href="#obo-mne" class="ui-box bottom-inOutSpread scrollto"> ОБО&nbsp;МНЕ </a></li>
+                            <li><a href="#resume" class="ui-box bottom-inOutSpread scrollto"> РЕЗЮМЕ </a></li>
                             <li><a href="#uslugi" class="ui-box bottom-inOutSpread scrollto"> МОИ&nbsp;УСЛУГИ </a></li>
                             <li><a href="#works" class="ui-box bottom-inOutSpread scrollto"> ПОРТФОЛИО </a></li>
                             <li><a href="#contacts" class="ui-box bottom-inOutSpread scrollto"> КОНТАКТЫ </a></li>
@@ -107,153 +108,356 @@
     @* Блок, в который нужно всегда оборачивать весь контент страницы, иначе не будет работать адаптивность *@
     <div class="wrapper">
         @* Блок обо мне *@
-        <div id="idPreim" class="col-lg-12 col-xs-12">
+        <div id="idOboMne" class="col-lg-12 col-xs-12">
             <div class="content">
-                <div class="col-lg-9 revealator-zoomin revealator-once revealator-below">
-                    <p> Меня зовут Антон. Я живу в Москве, и являюсь частным веб-разработчиком. Опыт в разработке сайтов и веб-приложений 3.5 года, поэтому мне есть, что вам предложить. </p>
-                    <p> Создаю сайты любой сложности, начиная от сайта-визитки заканчивая индивидуальным проектом! </p>
+                <div class="col-lg-12 col-xs-12">
+                    <p> <a id="obo-mne"></a> </p>
+                    <p class="section-title"> Обо мне </p>
+                    <span class="border">  </span>
+                    <div class="site-portfolio">
+                        <p class="details"> Вы находитесь на моём персональном сайте-портфолио. Ниже вы найдёте много информации обо мне, моём опыте, навыках и проектах. Надеюсь, будет интересно :-) </p>
+                    </div>
+                    <div class="details">
+                        <p> Меня зовут Антон. Я живу в Москве, и являюсь частным Web-разработчиком. Опыт в разработке 3.5 года, поэтому мне есть, что вам предложить. </p>
+                        <p> Для меня разработка сайтов это не просто работа, но еще и мое хобби! </p>
+                        <p> Создаю сайты любой сложности, начиная от сайта-визитки заканчивая индивидуальным проектом! </p>
+                        <p> Я могу все, что нужно для сайта, который будет работать и приносить вам прибыль: от создания дизайна и программирования до наполнения контентом и продвижения в поисковых системах, кроме того, обеспечу вам техническую поддержку. </p>
+                        <h4> Web-разработчик (при необходимости  могу, люблю и умею работать в роли Full-stack разработчика). </h4>
+                    </div>
+                    <p>
+                        <strong> Образование:  </strong> <br />
+                        Высшее. Московский автомобильно-дорожный государственный технический университет.
+                        <br />
+                        Среднее профессиональное. Московский государственный колледж информатики и программирования.
+                    </p>
+                    <p> <strong> Сертификаты: </strong> Сертификаты (Beonmax, GeekBrains) в областях: Web-разработки, разработке приложений на языке C#, систем управления версиями, баз данных, разработки на стеке технологий Microsoft .NET и ASP.NET Core. </p>
+                    <p> <strong> Специализация: </strong> Создание и программирование сайтов-визиток / landing page / корпоративных сайтов / интернет магазинов / сайтов под ключ / Web-приложений и Web-сервисов. Адаптивная вёрстка. </p>
+                    <p> <strong> Опыт работы:  </strong> 3.5 года. </p>
+                    <p>
+                        <strong> Используемые технологии: </strong> <br />
+                        Front-end (моя сильная сторона): HTML5, CSS3, Bootstrap, Javascript, jQuery. <br />
+                        Back-end: C# + ASP.NET Core MVC, SQL Server или MySQL, Entity Framework, LINQ.
+                    </p>
                 </div>
+                <div class="empty">
+                    &nbsp;
+                </div>
+                @* Блок резюме *@
+            <div class="resume-block">
+                <p> <a id="resume"></a> </p>
+                <p class="section-title"> Резюме </p>
+                <span class="border">  </span>
+                <div class="resume">
+                    <p> Ниже вы можете ознакомиться с моим кратким резюме. </p>
+                </div>
+                <div class="col-lg-12 col-xs-12 my-resume">
+                    @* Структура резюме *@
+                    <h2 class="work"> РАБОТА </h2>
+                    <div class="col-lg-12 col-xs-12">
+                        @* 1 *@
+                        <div class="col-lg-4 col-xs-12">
+                            <p> Апрель 2018 — по настоящее время </p>
+                        </div>
+                        <div class="col-lg-8 col-xs-12">
+                            <details>
+                                <summary> Web-разработчик [Overtech Consulting Group] </summary>
+                                <p> <strong> Обязанности: </strong> </p>
+                                <p> Разработка интерфейсов и написание бизнес-логики высоконагруженной автоматизированной системы. </p>
+                            </details>
+                        </div>
+                    </div>
+                    @* 2 *@
+                    <div class="col-lg-12 col-xs-12">
+                        <div class="col-lg-4 col-xs-12">
+                            <p>
+                                Август 2017 — март 2018 <br />
+                                8 месяцев
+                            </p>
+                        </div>
+                        <div class="col-lg-8 col-xs-12">
+                            <details>
+                                <summary> Программист [Nodov Group] </summary>
+                                <p> <strong> Обязанности: </strong> </p>
+                                <p>
+                                    - участие в разработке архитектуры web-приложения (участие в разработке прототипа web-приложения); <br />
+                                    - разработка ERP-системы для управления ресурсами предприятия по закупкам и продажам строительных материалов (приложение на C# WinForms, которое планировалось переписать под web на ASP.NET WebForms); <br />
+                                    - выполнение поручений руководителя IT-отдела.
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+                    @* 3 *@
+                    <div class="col-lg-12 col-xs-12">
+                        <div class="col-lg-4 col-xs-12">
+                            <p>
+                                Август 2016 — февраль 2017 <br />
+                                7 месяцев
+                            </p>
+                        </div>
+                        <div class="col-lg-8 col-xs-12">
+                            <details>
+                                <summary> Специалист по продажам [Студио Модерна] </summary>
+                                <p> <strong> Обязанности: </strong> </p>
+                                <p>
+                                    - консультирование клиентов по товарам на сайте; <br />
+                                    - оформление заказов в ERP; <br />
+                                    - кросс-продажи.
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+                    @* 4 *@
+                    <div class="col-lg-12 col-xs-12">
+                        <div class="col-lg-4 col-xs-12">
+                            <p>
+                                Август 2016 — февраль 2017 <br />
+                                7 месяцев
+                            </p>
+                        </div>
+                        <div class="col-lg-8 col-xs-12">
+                            <details>
+                                <summary> Специалист [Федеральная служба государственной статистики (Росстат)] </summary>
+                                <p> <strong> Обязанности: </strong> </p>
+                                <p>
+                                    - выполнение поручений Senior разработчика; <br />
+                                    - написание на C# WinForms отдельных компонентов приложения.
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+                    @* Блок Образование *@
+                    <div class="work">
+                        <h2 class="work"> ОБРАЗОВАНИЕ </h2>
+                        <div class="col-lg-12 col-xs-12">
+                            @* 1 *@
+                            <div class="col-lg-4 col-xs-12">
+                                <p> 2015-2017 </p>
+                            </div>
+                            <div class="col-lg-8 col-xs-12">
+                                <details>
+                                    <summary> Высшее. (МАДИ) </summary>
+                                    <p> Московский автомобильно-дорожный государственный технический университет. <br /> </p>
+                                    <p> Управление, Информационные системы и технологии. </p>
+                                </details>
+                            </div>
+                        </div>
+                        @* 2 *@
+                        <div class="col-lg-12 col-xs-12">
+                            @* 1 *@
+                            <div class="col-lg-4 col-xs-12">
+                                <p> 2010-2014 </p>
+                            </div>
+                            <div class="col-lg-8 col-xs-12">
+                                <details>
+                                    <summary> Среднее профессиональное. (МГКИП) </summary>
+                                    <p> Московский государственный колледж информатики и программирования. <br /> </p>
+                                    <p> Программирование, Программирование вычислительной техники и автоматизированных систем. </p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 @* Блок преимущества работы со мной *@
-                <div class="col-lg-12 revealator-zoomin revealator-once revealator-below">
-                    <h2 id="idTTitle" class="text-center"> Преимущества работы со мной </h2>
+                <div class="col-lg-12 col-xs-12">
+                    <p class="section-title"> Преимущества работы со мной </p>
+                    <span class="border">  </span>
                 </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Совершенно без предоплаты. Все исходные файлы получаете после оплаты. При необходимости могу подписать договор </p>
-                        @*</div>*@
+                <div class="work">
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Совершенно без предоплаты </summary>
+                            <p>
+                                Вы платите только по факту выполнения работы, а не за сам процесс. <br />
+                                Вы платите не за время, за которое я выполняю ваш проект, вы платите за мой опыт. <br />
+                                Все исходные файлы получаете после оплаты. При необходимости могу подписать договор. <br />
+                                Оплату принимаю безналичным расчетом на расчетный счет, Яндекс.Деньги, Qiwi-кошелек, WebMoney, ePayments. Расчет окончательной стоимости работы происходит после получения подробной задачи на e-mail. Предварительную сумму, можно уточнить связавшись со мной любым удобным для вас способом. <br /><br />
+                                Задача выполняется в соответствии с ТЗ (техническое задание) и в сроки оговоренные с Вами заранее. Если у Вас нет ТЗ, свяжитесь со мной и я Вышлю Вам необходимые вопросы для выполнения работы. Либо вы можете сразу <a href="https://yadi.sk/i/YKDaZs8RymacrQ"> скачать мой бриф </a>, заполнить и предоставить мне уже заполненный. <br /><br />
+                                Сроки исполнения сильно зависят от задачи. Могут варьироваться как от 1 недели, так и до нескольких месяцев. Например, создание лендинга или сайта визитки, чаще всего занимает 3-4 дня.
+                            </p>
+                        </details>
                     </div>
-                </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Работаю сам, на звонки отвечаю сам, ни с какими веб-студиями или подрядчиками не сотрудничаю, всегда на связи </p>
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Разработку веду на платформе корпорации Microsoft ASP.NET Core </summary>
+                            <p>
+                                В разработке я не использую никаких CMS. Все мои проекты разрабатываются на платформе ASP.NET Core. <br />
+                                А это значит, что разрабатывая проект на ASP.NET Core мы имеем максимальную свободу для модернизаций и расширению сайтов и web-приложений. <br />
+                                В отличии от тех, кто использует различные CMS, с ASP.NET Core вы можете не беспокоится о кроссплатформенности, а также ваш проект никогда не упрется в технологический тупик как это часто бывает с CMS (WordPress, Joomla и т.д). <br />
+                                ASP.NET Core полностью ушел от монолитной архитектуры, поэтому все ваши проекты спокойно открыты даже к самым широким и масштабным модернизациям и расширениям без глобального переписывания всего проекта, а также их очень удобно поддерживать.
+                            </p>
+                        </details>
                     </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Оплата только за результат, а не за процесс, стоимость называю до начала разработки сайта </p>
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Соблюдаю ТЗ </summary>
+                            <p>
+                                Работаю всегда в соответствии с ТЗ (техническое задание). Никаких креативных, резких и самовыдуманных действий касательно проекта не делаю без согласования с заказчиком.
+                            </p>
+                        </details>
                     </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Консультации всегда бесплатно </p>
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Перед разработкой готовлю прототип вашего проекта </summary>
+                            <p>
+                                Перед началом разработки сайта я готовлю прототип вашего проекта. Обычно я успеваю сделать прототип в день заказа или на следующий день.
+                            </p>
+                        </details>
                     </div>
-                    @*</div>*@
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Работаю один и всегда на связи </summary>
+                            <p>
+                                Работаю сам, на звонки отвечаю сам, ни с какими web-студиями или подрядчиками не сотрудничаю, всегда на связи. <br />
+                                Все ваши требования и пожелания к проекту не теряются и не искажаются, так как сразу записываются мной. <br />
+                                В процессе выполнения всех этапов проекта я всегда активно поддерживаю связь с заказчиком и готов учитывать все изменения.
+                            </p>
+                        </details>
+                    </div>
                 </div>
             </div>
         </div>
-        @* Блок Порядок работы? *@
+        @* Блок Порядок работы *@
         <div id="idHowWorkMe" class="col-lg-12 col-xs-12">
             <div class="content">
-                <div class="col-lg-12 revealator-zoomin revealator-once revealator-below">
-                    <h2 id="idTTitle" class="text-center"> Порядок работы </h2>
+                <div class="col-lg-12 col-xs-12 main-work-order">
+                    <p class="section-title"> Порядок работы </p>
+                    <span class="border">  </span>
                 </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Оставляете заявку через форму, связываетесь со мной по телефону, WhatsApp или по E-mail </p>
+                @* Блок порядок работы со мной *@
+                <div class="work-order">
+                    @* Первый ряд *@
+                    <div class="col-lg-12 col-xs-12">
+                        <div class="col-lg-4 col-xs-12">
+                            <img src="~/images/email.png" class="order-work" />
+                            <p class="emai-details"> Вы оставляете заявку на сайте, либо связываетесь со мной по телефону, WhatsApp или по E-mail. </p>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <img src="~/images/consultation.png" class="order-work" />
+                            <p> Я консультирую Вас по всем вопросам. Мы обсуждаем техническое задание, уточняем детали, оговориваем срок сдачи готового проекта и его стоимость. </p>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <img src="~/images/prototype.png" class="order-work" />
+                            <p> Готовлю прототип сайта, предоставляю Вам. Вы вносите правки, я дорабатываю до устраивающего Вас результата. </p>
+                        </div>
                     </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Работаю в соответствии с ТЗ (техническое задание). Если у вас нет ТЗ, то вы можете <a href="https://yadi.sk/i/1vpx8k1tAuBAfg?rlink=reflink-789791"> скачать мой бриф. </a> </p>
+                    @* Второй ряд *@
+                    <div class="col-lg-12 col-xs-12 two">
+                        <div class="col-lg-4 col-xs-12">
+                            <img src="~/images/coding.png" class="order-work" />
+                            <p> Верстаю сайт, программирую необходимый вам функционал. </p>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <img src="~/images/demonstration.png" class="order-work" />
+                            <p> Демонстрирую готовый проект, его работу в интернете. </p>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <img src="~/images/discet.png" class="order-work" />
+                            <p> Передаю вам файлы вашего сайта и помогаю с установкой на ваш хостинг! </p>
+                        </div>
                     </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Верстка и программирование </p>
-                    </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3 revealator-zoomin revealator-once revealator-below">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <p class="text-center"> Покупка домена, размещение на хостинге, после оплаты работы передача проекта в вашу собственность </p>
-                    </div>
-                    @*</div>*@
                 </div>
             </div>
         </div>
         @* Блок мои услуги *@
-        <div id="idMyUslugi" class="col-lg-12 col-xs-12 revealator-zoomin revealator-once revealator-below">
+        <div id="idMyUslugi" class="col-lg-12 col-xs-12">
             <div class="content">
-                <div class="col-lg-12 revealator-zoomin revealator-once revealator-below">
+                <div class="col-lg-12 col-xs-12">
                     <p> <a id="uslugi"></a> </p>
-                    <h2 id="idTTitle" class="text-center"> Мои услуги </h2>
+                    <p class="section-title"> Мои услуги </p>
+                    <span class="border">  </span>
                 </div>
-                <div class="col-lg-3">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <div class="panel-body"> <p class="text-center"> Одностраничный сайт (Landing Page) </p> </div>
-                        <p class="text-center"> 3-4 дня </p>
-                        <p class="text-center"> от 12 000 руб. </p>
+                @* Блок моих услуг *@
+                <div class="services">
+                    <div class="services-details">
+                        <p> Ниже можно найти список работ с которыми я могу вам помочь. Если вам необходимо реализовать что-либо из списка - свяжитесь со мной! </p>
+                        <p> Указанные сроки и стоимость являются примерными. Более точно смогу сказать после получения/формирования ТЗ и после обсуждения всех деталей. </p>
                     </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <div class="panel-body"> <p class="text-center"> Сайт-визитка </p> </div>
-                        <p class="text-center"> 2-3 дня </p>
-                        <p class="text-center"> от 7 000 руб. </p>
+                    @* Первая услуга *@
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Одностраничный сайт (Landing Page) </summary>
+                            <p> <strong> Срок: </strong> от 3-х дней </p>
+                            <p> <strong> Стоимость: </strong> от 12 000 руб. </p>
+                        </details>
                     </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <div class="panel-body"> <p class="text-center"> Корпоративный сайт </p> </div>
-                        <p class="text-center"> 1-2 недели </p>
-                        <p class="text-center"> от 15 000 руб. </p>
+                    @* Вторая услуга *@
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Сайт-визитка </summary>
+                            <p> <strong> Срок: </strong> от 2-х дней </p>
+                            <p> <strong> Стоимость: </strong> от 7 000 руб. </p>
+                        </details>
                     </div>
-                    @*</div>*@
-                </div>
-                <div class="col-lg-3">
-                    @*<div class="panel panel-default">*@
-                    <div class="panel-body">
-                        <div class="panel-body"> <p class="text-center"> Интернет-магазин </p> </div>
-                        <p class="text-center"> 3-4 недели </p>
-                        <p class="text-center"> от 20 000 руб. </p>
+                    @* Третья услуга *@
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Сайт-блог </summary>
+                            <p> <strong> Срок: </strong> от 2-х дней </p>
+                            <p> <strong> Стоимость: </strong> от 6 000 руб. </p>
+                        </details>
                     </div>
-                    @*</div>*@
+                    @* Четвертая услуга *@
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Корпоративный сайт </summary>
+                            <p> <strong> Срок: </strong> от 1 недели </p>
+                            <p> <strong> Стоимость: </strong> от 15 000 руб. </p>
+                        </details>
+                    </div>
+                    @* Пятая услуга *@
+                    <div class="col-lg-12 col-xs-12">
+                        <details>
+                            <summary> Интернет-магазин </summary>
+                            <p> <strong> Срок: </strong> от 3-х недель </p>
+                            <p> <strong> Стоимость: </strong> от 20 000 руб. </p>
+                        </details>
+                    </div>
                 </div>
                 @* Блок дополнительные услуги *@
-                <div id="idDopUslugi" class="col-lg-12 col-xs-12 revealator-zoomin revealator-once revealator-below">
-                    <div class="col-lg-12">
-                        <h2 id="idTTitle" class="text-center"> Дополнительные услуги </h2>
+                <div id="idDopUslugi" class="col-lg-12 col-xs-12">
+                    <div class="col-lg-12 col-xs-12">
+                        <p class="section-title"> Дополнительные услуги </p>
+                        <span class="border">  </span>
+                        <p> Ниже можно найти список дополнительных работ с которыми я могу вам помочь. Такие как продвижение, поддержка, индивидуальный сайт, который не входит ни в одну из указанных категорий сайтов или индивидуальный проект.  </p>
                     </div>
-                    <div class="col-lg-4">
-                        @*<div class="panel panel-default">*@
-                        <div class="panel-body">
-                            <div class="panel-body"> <p class="text-center"> Продвижение сайтов </p> </div>
-                            <p class="text-center"> от 10 000 руб. (в мес.) </p>
+                    <div class="dop-services-details">
+                        @* Первая услуга *@
+                        <div class="col-lg-12 col-xs-12">
+                            <details>
+                                <summary> Продвижение сайтов </summary>
+                                <p> <strong> Стоимость: </strong> от 10 000 руб. (в мес.) </p>
+                                <p> В рамках данной услуги я буду следить, чтобы ваш сайт в течении месяца занимал нужные вам позиции. Для этого я буду регулярно править ключевые фразы, стоп-фразы, неактуальные фразы, а также фразы, которые являются висяком (т.е. по которым не происходит поиск). </p>
+                            </details>
                         </div>
-                        @*</div>*@
-                    </div>
-                    <div class="col-lg-4">
-                        @*<div class="panel panel-default">*@
-                        <div class="panel-body">
-                            <div class="panel-body"> <p class="text-center"> Настройка Яндекс.Директ </p> </div>
-                            <p class="text-center"> от 4 000 руб. (в мес.) </p>
+                        @* Вторая услуга *@
+                        <div class="col-lg-12 col-xs-12">
+                            <details>
+                                <summary> Настройка Яндекс.Директ </summary>
+                                <p> <strong> Стоимость: </strong> от 4 000 руб. (в мес.) </p>
+                                <p> В рамках данной услуги я произведу базовую настройку рекламы вашего нового сайта в Яндекс.Директ, чтобы начались показы и на ваш сайт начали приходить первые клиенты. </p>
+                                <p> Также могу перенастроить рекламу, если у вас уже имеется сайт. </p>
+                            </details>
                         </div>
-                        @*</div>*@
-                    </div>
-                    <div class="col-lg-4">
-                        @*<div class="panel panel-default">*@
-                        <div class="panel-body">
-                            <div class="panel-body"> <p class="text-center"> Настройка Google Adwords </p> </div>
-                            <p class="text-center"> от 4 000 руб. (в мес.) </p>
+                        @* Третья услуга *@
+                        <div class="col-lg-12 col-xs-12">
+                            <details>
+                                <summary> Настройка Google Adwords </summary>
+                                <p> <strong> Стоимость </strong> от 4 000 руб. (в мес.) </p>
+                                <p> В рамках данной услуги я произведу базовую настройку рекламы вашего нового сайта в Google Adwords, чтобы начались показы и на ваш сайт начали приходить первые клиенты. </p>
+                                <p> Также могу перенастроить рекламу, если у вас уже имеется сайт. </p>
+                            </details>
                         </div>
-                        @*</div>*@
+                        @* Четвертая услуга *@
+                        <div class="col-lg-12 col-xs-12">
+                            <details>
+                                <summary> Индивидуальный проект </summary>
+                                <p> <strong> Срок: </strong> сроки после ТЗ </p>
+                                <p> <strong> Стоимость: </strong> стоимость после ТЗ </p>
+                                <p> Под данной услугой понимается разработка вашего индивидуального проекта, который не относится ни к одной из указанных категорий.  </p>
+                                <p> Например web-приложение, desktop-приложение, мобильное приложение (под IOS или Android), написание модулей, библиотек, web-сервисов, интеграция со сторонними API. </p>
+                            </details>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -263,51 +467,46 @@
             <div class="content">
                 <div class="col-lg-12">
                     <p><a id="works"></a></p>
-                    <h2 id="idTTitle" class="text-center revealator-zoomin revealator-once revealator-below"> Мои работы </h2>
+                    <p class="section-title"> Мои работы </p>
+                    <span class="border">  </span>
                 </div>
                 @* Выгрузка изображений моих работ *@
                 @model IEnumerable<SkyEx.Models.FileModel>
                 @foreach (var item in Model) {
                     <div id="idImages" class="col-lg-3 col-xs-6 photobox photobox_type17">
                         <div class="photobox__previewbox">
-                            <img class="img-thumbnail grow photobox__preview revealator-zoomin revealator-once revealator-below" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
+                            <img class="img-thumbnail grow photobox__preview" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
                             @*<span id="idFullName" class="photobox__label"> @item.FullName </span> <br />
                                 <span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
-                            <div id="idTitle" class="text-center revealator-zoomin revealator-once revealator-below"> @item.Title </div>
+                            <div id="idTitle" class="text-center"> @item.Title </div>
                         </div>
                     </div>
                 }
-                @* Блок почему частный веб-разработчик выгоднее? *@
-                <div class="col-lg-12 col-xs-12 revealator-zoomin revealator-once revealator-below">
-                    <h2 id="idTTitle" class="text-center"> Почему частный веб-разработчик выгоднее? </h2>
+                @* Блок почему частный web-разработчик выгоднее? *@
+                <div class="col-lg-12 col-xs-12">
+                    <p class="section-title"> Почему частный Web-разработчик выгоднее? </p>
+                    <span class="border">  </span>
                 </div>
-                <div class="col-lg-4 col-xs-12 revealator-zoomin revealator-once revealator-below">
+                <div class="col-lg-12 col-xs-12">
                     <p> Дизайн-студии и рекламные агентства берут гораздо большие суммы, потому что цена их конечного продукта складывается из зарплаты штата сотрудников, стоимости аренды офиса, налогов. А кто это оплачивает – конечно же, заказчик. </p>
                     <p> И, поверьте, дорого – не всегда значит хорошо и качественно. </p>
                     <p> Также из несомненных плюсов: непосредственно личный контакт заказчика с исполнителем, без посредников в виде менеджера. Очень часто при работе с менеджером получается «глухой телефон»: менеджер может неправильно истолковать слова заказчика, не выяснить детали, не донести все задачи и пожелания, да мало ли что еще... </p>
                 </div>
-                <div class="col-lg-2">
-
-                </div>
-                <div class="col-lg-4 col-xs-12 revealator-zoomin revealator-once revealator-below">
-                    <p> У меня достаточно опыта: дизайн, back-end и front-end разработка, владение HTML/CSS/Javascript/Bootstrap, jQuery + AJAX. ASP.NET Core MVC + C# + MS SQL Server или MySQL. </p>
-                    <p> Я могу все, что нужно для сайта, который будет работать и приносить вам прибыль: от создания дизайна и программирования до наполнения контентом и продвижения в поисковых системах, кроме того, обеспечу вам техническую поддержку. </p>
-                </div>
                 @* Блок с кнопкой для подъема вверх *@
-                <div class="col-lg-12 col-xs-12">
-                    <div class="btn-up">
-                        <a href="#up" class="btn btn-default btn-lg scrollto glyphicon glyphicon-arrow-up"> ВВЕРХ </a>
-                    </div>
-                </div>
+                @*<div class="col-lg-12 col-xs-12">
+                        <div class="btn-up">
+                            <a href="#up" class="btn btn-default btn-lg scrollto glyphicon glyphicon-arrow-up"> ВВЕРХ </a>
+                        </div>
+                    </div>*@
             </div>
         </div>
     </div>
     @* Просто пустой блок над футером необходимый для отступа над футером *@
-    @*<div class="col-lg-12 col-xs-12" id="emptyBlock">
+    <div class="col-lg-12 col-xs-12" id="emptyBlock">
 
-        </div>*@
+    </div>
     @* Блок футера *@
-    <footer class="footer revealator-zoomin revealator-once revealator-below">
+    <footer class="footer">
         <p> <a id="contacts"></a> </p>
         <div class="col-lg-2">
 
