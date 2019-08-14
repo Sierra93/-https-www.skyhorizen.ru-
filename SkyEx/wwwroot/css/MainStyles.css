@@ -57,6 +57,10 @@ p {
     line-height: 25px;
     margin: 0 0 10px;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
 
 body {
     /*font-family: "PT Sans";*/
@@ -126,7 +130,7 @@ body {
     /*text-align: center;*/
 }
 #emptyBlock {
-    margin-top: 650px;
+    margin-top: 550px;
     /*background-image: -webkit-gradient(linear,left top,left bottom,from(#5c2d75),to(#007ac0));
     background-image: -webkit-linear-gradient(top,#5c2d75,#007ac0);
     background-image: -o-linear-gradient(top,#5c2d75,#007ac0);
@@ -199,12 +203,28 @@ h2 {
     margin-bottom: 2px;
     margin-top: 2px;
     padding-right: 3px;
-    padding-bottom: 3px;    
+    padding-bottom: 3px;
+    /* box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16); */
+    position: relative;
+    /* width: 300px; */
+    /* height: 400px; */
 }
-    #idTTitle {
-        margin-top: 50px;
-        margin-bottom: 50px;
+    #idImages:hover .block {
+        display: block;
     }
+.block {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* background: rgba(255,255,255, 0.7); */
+    padding: 20px;
+    display: none;
+}
+#idTTitle {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 /* Стили для плавного увеличения изображений при наведении на них */
 /*.grow:hover {
     -webkit-transform: scale(1.2);
@@ -228,6 +248,12 @@ h2 {
 /* ============================================================= */
 /* НУЖНО ДЛЯ ЭФФЕКТОВ ИЗОБРАЖЕНИЙ */
 /* При наведении серый черно-белый фон */
+#idImages:hover .imgFromBack { 
+    filter: brightness(50%);
+    background: -webkit-linear-gradient(315deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), -webkit-linear-gradient(65deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), -webkit-linear-gradient(135deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), -webkit-linear-gradient(205deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
+    background: linear-gradient(135deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), linear-gradient(25deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), linear-gradient(315deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), linear-gradient(245deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
+    transition: 0.5s;
+}
 .grow {
     /*-webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -235,6 +261,7 @@ h2 {
     -ms-transition: all 1s ease;
     transition: all 1s ease;*/
 }
+
 
     .grow:hover {
         /*filter: grayscale(100%);*/
@@ -332,15 +359,27 @@ h2 {
     padding: 0px;
     font-size: 12px;
 }
-    .col-xs-6 > .idTitle {
+#idTitle {
+    font-size: 12pt
+}
+/* Стили для задачи и ее описания */
+.title-task {
+    font-size: 14pt;
+    font-weight: 400;
+}
+    .col-xs-6 > #idTitle {
         font-size: 12px;
     }
+/* Стиль для кнопки подробнее */
+.btnDetails {
+    text-align: center;
+}
 /* Стили для полного наименовани сайта */
 #idFullName {
     color: white;
     font-size: 18px;
     line-height: 20px;
-    top: 100px;
+    /*top: 100px;*/
 }
 #idLinkSite {
     color: white;
@@ -461,12 +500,12 @@ details[open] {
 .two {
     margin-top: -70px;
 }*/
-.btnWrite {
+.btnToOrder {
     background: -webkit-linear-gradient(315deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), -webkit-linear-gradient(65deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), -webkit-linear-gradient(135deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), -webkit-linear-gradient(205deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
     background: linear-gradient(135deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), linear-gradient(25deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), linear-gradient(315deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), linear-gradient(245deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
     border-radius: 22px;
 }
-    .btnWrite:hover {
+    .btnToOrder:hover {
         /*color: #e91e63;*/
         /*color: gray;*/
         /*background: white;*/
@@ -478,6 +517,33 @@ details[open] {
         color: white;
         border-color: #ed5685;
     }
+.btn-details {
+    background: -webkit-linear-gradient(315deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), -webkit-linear-gradient(65deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), -webkit-linear-gradient(135deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), -webkit-linear-gradient(205deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
+    background: linear-gradient(135deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), linear-gradient(25deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), linear-gradient(315deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), linear-gradient(245deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
+    /*border-radius: 22px;*/
+}
+.btn-details:hover {
+    /*color: #e91e63;*/
+    /*color: gray;*/
+    /*background: white;*/
+    background: -webkit-linear-gradient(315deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), -webkit-linear-gradient(65deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), -webkit-linear-gradient(135deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), -webkit-linear-gradient(205deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
+    background: linear-gradient(135deg, hsla(279.56, 91.31%, 45.15%, 1) 0%, hsla(279.56, 91.31%, 45.15%, 0) 70%), linear-gradient(25deg, hsla(228.42, 96.97%, 43.87%, 1) 10%, hsla(228.42, 96.97%, 43.87%, 0) 80%), linear-gradient(315deg, hsla(332.61, 93.38%, 49.04%, 1) 15%, hsla(332.61, 93.38%, 49.04%, 0) 80%), linear-gradient(245deg, hsla(70.1, 97.91%, 41.4%, 1) 100%, hsla(70.1, 97.91%, 41.4%, 0) 70%);
+    /*border-radius: 50%;*/
+    animation: radial-pulse 1s normal;
+    box-shadow: 2px 4px 13px 0 rgba(155,57,90,1);
+    color: white;
+    border-color: #ed5685;
+}
+/* Стили для кнопки ВВЕРХ */
+.arrow-up {
+    height: 100px;
+    text-align: center;
+    padding: 30px;
+}
+.arr-up {
+    display: flex;
+    justify-content: center;
+}
 @keyframes radial-pulse {
     0% {
         /*box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);*/
@@ -487,4 +553,8 @@ details[open] {
     100% {
         box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
     }
+}
+.vk {
+    padding: 30px;
+    height: 86px;
 }

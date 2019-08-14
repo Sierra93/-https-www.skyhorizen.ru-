@@ -54,15 +54,15 @@ namespace SkyEx.Controllers {
             List<FileModel> imagePath = new List<FileModel>();  // Создаем коллекцию на основе полей модели
             using (var con = new SqlConnection(connectionString)) {
                 con.Open();
-                using (var com = new SqlCommand("SELECT TITLE, IMAGE_PATH, FULL_NAME, LINK_SITE FROM Portfolio", con)) {
+                using (var com = new SqlCommand("SELECT TITLE, IMAGE_PATH, COMMENT_TASK, COMMENT_DETAILS FROM Portfolio", con)) {
                     using (var reader = com.ExecuteReader()) {
                         if (reader.HasRows) {
                             while (reader.Read()) {
                                 imagePath.Add(new FileModel {
                                     Title = reader["TITLE"].ToString(),
                                     ImagePath = reader["IMAGE_PATH"].ToString(),
-                                    FullName = reader["FULL_NAME"].ToString(),
-                                    LinkSite = reader["LINK_SITE"].ToString()
+                                    CommentTask = reader["COMMENT_TASK"].ToString(),
+                                    CommentDetails = reader["COMMENT_DETAILS"].ToString()
                                 });
                             }
                         }

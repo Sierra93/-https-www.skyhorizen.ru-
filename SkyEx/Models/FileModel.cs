@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyEx.Models {
-    // Модель моих работ
+    // Этот класс будет сопоставляться с таблицей портфолио в БД
     public class FileModel {
         public int Id { get; set; }
         public string Title { get; set; }
         public string ImagePath { get; set; } 
-        public string FullName { get; set; }
-        public string LinkSite { get; set; }
+        // Задача
+        public string CommentTask { get; set; }
+        // Описание задачи
+        public string CommentDetails { get; set; }
     }
 }
