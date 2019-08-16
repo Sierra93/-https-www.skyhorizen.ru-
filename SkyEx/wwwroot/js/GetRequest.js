@@ -37,7 +37,4 @@ let onPressGetRequest = () => {
         }
     });
 };
-// Событие подробнее 
-let onPressBtnDetails = () => {
 
-};

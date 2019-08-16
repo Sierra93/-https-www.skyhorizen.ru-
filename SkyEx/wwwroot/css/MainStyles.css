@@ -16,6 +16,7 @@
     justify-content: center;
     /*padding: 100px 20px 0;*/
 }
+/* Стили для фона над хидером */
 .info {
     text-align: center;
     /*margin-top: 50px;
@@ -214,7 +215,7 @@ h2 {
     }
 .block {
     position: absolute;
-    left: 0;
+    left: 5px;
     bottom: 0;
     right: 0;
     /* background: rgba(255,255,255, 0.7); */
@@ -544,6 +545,9 @@ details[open] {
     display: flex;
     justify-content: center;
 }
+.work {
+    margin-bottom: 15px;
+}
 @keyframes radial-pulse {
     0% {
         /*box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);*/
@@ -557,4 +561,87 @@ details[open] {
 .vk {
     padding: 30px;
     height: 86px;
+}
+/* Стили для адаптивности */
+/* xs (<=543px) */
+@media (max-width: 575px) {
+    .content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+        .content > p {
+            line-height: 35px;
+        }
+    .info > h1 {
+        font-size: 25px;
+    }
+    .section-title {
+        font-size: 25px;
+        letter-spacing: normal;
+    }
+    #emptyBlock {
+        margin-top: 700px;
+    }
+    .block {
+        position: absolute;
+        left: 5px;
+        bottom: 0;
+        right: 0;
+        /* background: rgba(255,255,255, 0.7); */
+        padding: 20px;
+        display: none;
+    }
+        .block > #idTitle {
+            font-family: 'Open Sans',sans-serif,Arial;
+            font-size: 14px;
+            /* line-height: normal; */
+            padding-bottom: 10px;
+            line-height: 20px;
+            margin: 0px 0 -15px;
+        }
+    #idTitle {
+        font-size: 12pt;
+    }
+    p {
+        font-family: 'Open Sans',sans-serif,Arial;
+        font-size: 20px;
+        line-height: 1.625;
+        padding-bottom: 10px;
+        line-height: 30px;
+        margin: 0px 0 -15px;
+    }
+    h4 {
+        line-height: 30px;
+    }
+    .details > p {
+        line-height: 35px;
+    }
+    .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+        margin-right: -15px;
+        margin-left: -15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+    }
+}
+/* md (>=768 и <=991) */
+@media (min-width: 768px) and (max-width: 991px) {
+    #emptyBlock {
+        margin-top: 700px;
+    }
+    .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+        margin-right: -15px;
+        margin-left: -15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+/* lg (>=992 и <=1199) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #emptyBlock {
+        margin-top: 700px;
+    }
 }

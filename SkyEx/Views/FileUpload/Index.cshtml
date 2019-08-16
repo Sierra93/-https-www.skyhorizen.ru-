@@ -23,6 +23,7 @@
     <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
     <script src="~/js/SlowScroll.js" asp-append-version="true"></script>
     <script src="~/js/GetRequest.js" asp-append-version="true"></script>
+    <script src="~/js/GetDetails.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     @* Нужно для красивого алерта используя плагин sweetalert *@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -63,6 +64,7 @@
     </div>
     @* Блок хидера *@
     @* container-fluid - растягивает хидер на всю ширину экрана *@
+    <a id="about"></a>
     <div class="container-fluid">
         @*<div id="header" class="clearfix">*@
         <div class="row">
@@ -85,7 +87,6 @@
                 @* Здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
                 <div class="col-lg-12">
                     <div id="navbarCollapse" class="collapse navbar-collapse">
-                        <p> <a id="about"></a> </p>
                         @* Список меню *@
                         @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
                         <ul class="nav nav-pills">
@@ -120,10 +121,10 @@
                     </div>
                     <div class="details">
                         <p> Меня зовут Антон. Я живу в Москве, и являюсь частным Web-разработчиком. Опыт в разработке 3.5 года, поэтому мне есть, что вам предложить. </p>
+                        <h4> Web-разработчик (при необходимости  могу, люблю и умею работать в роли Full-stack разработчика). </h4>
                         <p> Для меня разработка сайтов это не просто работа, но еще и мое хобби! </p>
                         <p> Создаю сайты любой сложности, начиная от сайта-визитки заканчивая индивидуальным проектом! </p>
                         <p> Я могу все, что нужно для сайта, который будет работать и приносить вам прибыль: от создания дизайна и программирования до наполнения контентом и продвижения в поисковых системах, кроме того, обеспечу вам техническую поддержку. </p>
-                        <h4> Web-разработчик (при необходимости  могу, люблю и умею работать в роли Full-stack разработчика). </h4>
                     </div>
                     <p>
                         <strong> Образование:  </strong> <br />
@@ -449,12 +450,21 @@
                         @* 1 услуга *@
                         <div class="col-lg-12 col-xs-12">
                             <details>
+                                <summary> Редизайн сайтов </summary>
+                                <p> <strong> Срок: </strong> от 1 дня </p>
+                                <p> <strong> Стоимость: </strong> от 1 000 руб. </p>
+                                <p> Данная услуга подразумевает изменение дизайна сайта в случаях, если у вас уже имеется свой сайт, но вам требуется изменить его дизайн. Стоимость и сроки зависят от сложности и объема изменений по дизайну. </p>
+                            </details>
+                        </div>
+                        @* 2 услуга *@
+                        <div class="col-lg-12 col-xs-12">
+                            <details>
                                 <summary> Продвижение сайтов </summary>
                                 <p> <strong> Стоимость: </strong> от 10 000 руб. (в мес.) </p>
                                 <p> В рамках данной услуги я буду следить, чтобы ваш сайт в течении месяца занимал нужные вам позиции. Для этого я буду регулярно править ключевые фразы, стоп-фразы, неактуальные фразы, а также фразы, которые являются висяком (т.е. по которым не происходит поиск). </p>
                             </details>
                         </div>
-                        @* 2 услуга *@
+                        @* 3 услуга *@
                         <div class="col-lg-12 col-xs-12">
                             <details>
                                 <summary> Настройка Яндекс.Директ </summary>
@@ -463,7 +473,7 @@
                                 <p> Также могу перенастроить рекламу, если у вас уже имеется сайт. </p>
                             </details>
                         </div>
-                        @* 3 услуга *@
+                        @* 4 услуга *@
                         <div class="col-lg-12 col-xs-12">
                             <details>
                                 <summary> Настройка Google Adwords </summary>
@@ -472,7 +482,7 @@
                                 <p> Также могу перенастроить рекламу, если у вас уже имеется сайт. </p>
                             </details>
                         </div>
-                        @* 4 услуга *@
+                        @* 5 услуга *@
                         <div class="col-lg-12 col-xs-12">
                             <details>
                                 <summary> Индивидуальный проект </summary>
@@ -489,7 +499,7 @@
         @* Блок мои работы *@
         <div id="idPortfolio" class="col-lg-12 col-xs-12">
             <div class="content">
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-xs-12 work">
                     <p><a id="works"></a></p>
                     <p class="section-title"> Мои работы </p>
                     <span class="border">  </span>
@@ -498,18 +508,18 @@
                 @* Выгрузка изображений моих работ *@
                 @model IEnumerable<SkyEx.Models.FileModel>
                 @foreach (var item in Model) {
-                <div id="idImages" class="col-lg-6 col-xs-6">
+                <div id="idImages" class="col-lg-6 col-xs-12">
                     <img class="img-thumbnail imgFromBack" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
                     @*<div class="fullName"> @item.FullName  <br /> </div>*@
                     @*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
-                <div class="block">
-                    <p id="idTitle"> @item.Title </p>
-                    <p id="idTitle"> <span class="title-task"> Задача: </span> <br /> @item.CommentTask </p>
-                    <p id="idTitle"> <span class="title-task"> Описание: </span> <br /> @item.CommentDetails </p>
-                    <div class="btnDetails">
-                        <button type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()"> Подробнее </button>
+                    <div class="block">
+                        <p id="idTitle">@item.Title</p>
+                        <p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>
+                        <p id="idTitle"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
+                        @*<div class="btnDetails">
+                                <button type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()"> Подробнее </button>
+                            </div>*@
                     </div>
-                </div>
                 </div>
                 }
                 @* Блок почему частный web-разработчик выгоднее? *@
@@ -541,15 +551,15 @@
 
         </div>
         @* Блок слева *@
-    <div class="col-lg-4 col-xs-12 text-center">
-        <h3> Свяжитесь со мной </h3>
-        <label class="text-muted">
-            © 2019 Тимошенко Антон <br />
-            <label> E-mail:  </label> <a href="mailto:#"> skyhorizen@skyhorizen.ru </a>
-        </label> <br />
-        <label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
-        <a href="https://vk.com/sierrra"> <img src="https://pngicon.ru/file/uploads/vk-128x128.png" alt="Значок вк" class="vk"></a>
-    </div>
+        <div class="col-lg-4 col-xs-12 text-center">
+            <h3> Свяжитесь со мной </h3>
+            <label class="text-muted">
+                © 2019 Тимошенко Антон <br />
+                <label> E-mail:  </label> <a href="mailto:#"> skyhorizen@skyhorizen.ru </a>
+            </label> <br />
+            <label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
+            @*<a href="https://vk.com/sierrra"> <img src="https://pngicon.ru/file/uploads/vk-128x128.png" alt="Значок вк" class="vk"></a>*@
+        </div>
         @* Блок справа *@
         <div class="col-lg-4 col-xs-12 text-center">
             <h3 class="text-center"> Или заполните форму </h3>
