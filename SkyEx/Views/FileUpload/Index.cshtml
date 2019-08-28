@@ -44,6 +44,13 @@
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/54692815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4093273026657960",
+            enable_page_level_ads: true
+        });
+    </script>
     <!-- /Yandex.Metrika counter -->
     <a id="arrow-up"></a>
     <p class="up"> <a id="up"></a> </p>
@@ -107,6 +114,9 @@
     @*<div class="motivation">
             &nbsp;
         </div>*@
+    @*<script src="https://rotator.admediator.ru/js/rotator.js" async></script>
+    <div id="admediator-57640-400515"></div>
+    <script>(window.AdMediatorTag = window.AdMediatorTag || []).push({ v: 1, el: 'admediator-57640-400515', c: 57640, b: 400515 })</script>*@
     @* Блок, в который нужно всегда оборачивать весь контент страницы, иначе не будет работать адаптивность *@
     <div class="wrapper">
         @* Блок обо мне *@
@@ -508,19 +518,19 @@
                 @* Выгрузка изображений моих работ *@
                 @model IEnumerable<SkyEx.Models.FileModel>
                 @foreach (var item in Model) {
-                <div id="idImages" class="col-lg-6 col-xs-12">
-                    <img class="img-thumbnail imgFromBack" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
-                    @*<div class="fullName"> @item.FullName  <br /> </div>*@
-                    @*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
-                    <div class="block">
-                        <p id="idTitle">@item.Title</p>
-                        <p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>
-                        <p id="idTitle"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
-                        @*<div class="btnDetails">
-                                <button type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()"> Подробнее </button>
-                            </div>*@
+                    <div id="idImages" class="col-lg-6 col-xs-12">
+                        <img class="img-thumbnail imgFromBack" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
+                        @*<div class="fullName"> @item.FullName  <br /> </div>*@
+                        @*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
+                        <div class="block">
+                            <p id="idTitle">@item.Title</p>
+                            <p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>
+                            <p id="idTitle"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
+                            @*<div class="btnDetails">
+                                    <button type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()"> Подробнее </button>
+                                </div>*@
+                        </div>
                     </div>
-                </div>
                 }
                 @* Блок почему частный web-разработчик выгоднее? *@
                 <div class="col-lg-12 col-xs-12">
@@ -557,7 +567,7 @@
                 © 2019 Тимошенко Антон <br />
                 <label> E-mail:  </label> <a href="mailto:#"> skyhorizen@skyhorizen.ru </a>
             </label> <br />
-            <label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
+            <label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Социальные сети: <a href="https://vk.com/skyhorizen"> ВКонтакте </a><br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
             @*<a href="https://vk.com/sierrra"> <img src="https://pngicon.ru/file/uploads/vk-128x128.png" alt="Значок вк" class="vk"></a>*@
         </div>
         @* Блок справа *@
