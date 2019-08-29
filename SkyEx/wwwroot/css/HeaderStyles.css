@@ -247,7 +247,7 @@ textarea.form-control {
 .container-fluid {
     background: #e91e63 !important;
     padding: 1%;
-    height: 70px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
