@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SkyEx.Models {
     // Этот класс будет сопоставляться с таблицей портфолио в БД

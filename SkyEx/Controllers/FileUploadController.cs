@@ -9,11 +9,11 @@ using System.Data.SqlClient;
 using System.IO;
 
 namespace SkyEx.Controllers {
-    // В этом контроллере реализован функционал загрузки и выгрузке моих работ из БД на основании папки
+    // В этом контроллере реализован функционал по загрузке и выгрузке моих работ из БД и хранении изображений в папке
     public class FileUploadController : Controller {
         string connectionString = "Server=skyhorizen.ru,1433; Initial Catalog=u0772479_skydb; Persist Security Info=False; User ID=u0772479_admin; Password=K3sxb30*; MultipleActiveResultSets=False; Encrypt=True; TrustServerCertificate=true; Connection Timeout=30";
         public IActionResult Index() {
-            // Выводим данные из БД в указанную вью
+            // Выводим данные из БД
             var model = FetchImageFromDB();
             return View(model);
         }
@@ -54,11 +54,12 @@ namespace SkyEx.Controllers {
             List<FileModel> imagePath = new List<FileModel>();  // Создаем коллекцию на основе полей модели
             using (var con = new SqlConnection(connectionString)) {
                 con.Open();
-                using (var com = new SqlCommand("SELECT TITLE, IMAGE_PATH, COMMENT_TASK, COMMENT_DETAILS FROM Portfolio", con)) {
+                using (var com = new SqlCommand("SELECT ID, TITLE, IMAGE_PATH, COMMENT_TASK, COMMENT_DETAILS FROM Portfolio", con)) {
                     using (var reader = com.ExecuteReader()) {
                         if (reader.HasRows) {
                             while (reader.Read()) {
                                 imagePath.Add(new FileModel {
+                                    ID = Convert.ToInt32(reader["ID"]),
                                     Title = reader["TITLE"].ToString(),
                                     ImagePath = reader["IMAGE_PATH"].ToString(),
                                     CommentTask = reader["COMMENT_TASK"].ToString(),

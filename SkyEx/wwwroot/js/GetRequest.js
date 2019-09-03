@@ -2,7 +2,7 @@
 $(window).ready(function () {
     console.log("Страница загружена");
 });
-let onPressGetRequest = () => {
+var onPressGetRequest = () => {
     console.log("onPressGetRequest");
     var sUserName = document.getElementById("idName").value;     // Получаем имя клиента
     var sEmail = document.getElementById("idEmailOrNumber").value;    // Получаем почту или телефон

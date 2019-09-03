@@ -373,7 +373,7 @@ h2 {
     }
 /* Стиль для кнопки подробнее */
 .btnDetails {
-    text-align: center;
+    text-align: center;    
 }
 /* Стили для полного наименовани сайта */
 #idFullName {
@@ -596,14 +596,14 @@ details[open] {
     }
         .block > #idTitle {
             font-family: 'Open Sans',sans-serif,Arial;
-            font-size: 14px;
+            font-size: 10px;
             /* line-height: normal; */
             padding-bottom: 10px;
-            line-height: 20px;
+            line-height: 15px;
             margin: 0px 0 -15px;
         }
     #idTitle {
-        font-size: 12pt;
+        font-size: 10pt;
     }
     p {
         font-family: 'Open Sans',sans-serif,Arial;
@@ -627,6 +627,14 @@ details[open] {
         justify-content: center;
         margin-top: 5px;
     }
+    .title-task {
+        font-size: 10pt;
+        font-weight: 900;
+    }
+}
+/* Стили страницы подробнее */
+.details-text {
+    text-align: center;
 }
 /* md (>=768 и <=991) */
 @media (min-width: 768px) and (max-width: 991px) {

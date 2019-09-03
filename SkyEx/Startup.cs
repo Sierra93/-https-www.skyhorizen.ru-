@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SkyEx.Models;
 
 namespace SkyEx {
     public class Startup {
@@ -53,7 +54,7 @@ namespace SkyEx {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Admin}/{action=Index}/{id?}");
-            });
+            });           
         }
     }
 }
