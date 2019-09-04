@@ -13,7 +13,7 @@ var onPressBtnDetails = () => {
     // Ищем если в строке есть две кавычки, то будем сплитить строку и возьмем лишь то, что до двойных кавычек
     strForBack = selectedElem;
     return $.ajax({
-        url: '/Details/GetDetails/',
+        url: '/Details/SearchInDB/',
         type: "POST",
         dataType: "json",
         data: {
