@@ -1,4 +1,5 @@
-﻿$(window).ready(function () {
+﻿// JS НЕ ИСПОЛЬЗОВАЛ ДЛЯ РЕШЕНИЯ ЭТОЙ ЗАДАЧИ!!!!! ОБОШЕЛ ЭТОТ ПОДХОД ЧЕРЕЗ С# НА ФРОНТЕ!!!!!
+$(window).ready(function () {
     //console.log("Детали доступны");
 });
 // Кнопка подробнее о проекте
@@ -13,7 +14,7 @@ var onPressBtnDetails = () => {
     // Ищем если в строке есть две кавычки, то будем сплитить строку и возьмем лишь то, что до двойных кавычек
     strForBack = selectedElem;
     return $.ajax({
-        url: '/Details/SearchInDB/',
+        url: '/Details/GetDetails/',
         type: "POST",
         dataType: "json",
         data: {

@@ -27,6 +27,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     @* Нужно для красивого алерта используя плагин sweetalert *@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 <body>
     <!-- Yandex.Metrika counter -->
@@ -524,17 +525,25 @@
                         @*<div class="fullName"> @item.FullName  <br /> </div>*@
                         @*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
                         <div class="block details-text col-lg-12 col-xs-12">
-                            <p id="idTTitle" class="hidden">@item.ID</p>
-                            <p id="idTitle">@item.Title</p>
-                            <p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>
-                            <p id="idTitle"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
-                            @* Переходим на страницу подробностей о выбранной работе *@                            
-                        <div class="btnDetails">
-                            <a href="@Url.Action("GetDetails", "Details")" type="button" class="btn fancy btn-1 btn-sm btn-details text-center" onclick="onPressBtnDetails()">
-                                Подробнее
-                                @*@Html.ActionLink("Подробнее", "GetDetails", "Details")*@
-                            </a>
-                        </div>
+                            <form asp-action="GetDetails" method="post" enctype="multipart/form-data" asp-controller="Details">
+                                <div class="form-group">
+                                    <input type="text" name="id" id="id" class="hidden" value="@item.ID" />
+                                </div>
+                                @*<p id="idTTitle">@item.ID</p>*@
+                                <p id="idTitle">@item.Title</p>
+                                <p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>
+                                <p id="idTitle"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
+                                @* Переходим на страницу подробностей о выбранной работе *@
+                                <div class="btnDetails">
+                                    @*<a href="@Url.Action("GetDetails", "Details")" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center" onclick="onPressBtnDetails()">
+                                            Подробнее
+                                            @Html.ActionLink("Подробнее", "GetDetails", "Details")
+                                        </a>*@
+                                    <div class="form-group">
+                                        <input type="submit" value="Подробнее" class="btn fancy btn-1 btn-sm btn-details text-center" />
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 }
