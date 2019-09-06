@@ -26,6 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
+    <a id="arrow-up"></a>
     <div class="container-fluid">
         @*<div id="header" class="clearfix">*@
         <div class="row">
@@ -85,12 +86,13 @@
             </div>
         }
     </div>
-    @* Просто пустой блок над футером необходимый для отступа над футером *@
-    <div class="col-lg-12 col-xs-12" id="emptyBlock">
-
-    </div>
+    @* Блок с кнопкой для подъема вверх *@
     <div class="col-lg-12 col-xs-12 arr-up">
         <a href="#arrow-up" class="scrollto"> <img src="~/images/arrow-up-new.png" class="arrow-up" /> </a>
+    </div>
+    @* Просто пустой блок над футером необходимый для отступа над футером *@
+    <div id="emptyBlock" class="col-lg-12 col-xs-12">
+
     </div>
     <footer class="footer">
         <p> <a id="contacts"></a> </p>

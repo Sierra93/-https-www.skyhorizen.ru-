@@ -15,7 +15,6 @@ namespace SkyEx.Controllers {
         // Переходим на страницу подробностей      
         //[HttpGet]
         public IActionResult GetDetails(int id) {
-            //List<FileModel> model = new List<FileModel>();
             var data = SearchInDB(id);
             return View(data);
         }
