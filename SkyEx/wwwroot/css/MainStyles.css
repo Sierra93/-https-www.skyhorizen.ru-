@@ -361,7 +361,7 @@ h2 {
     font-size: 12px;
 }
 #idTitle {
-    font-size: 12pt
+    font-size: 12pt;
 }
 /* Стили для задачи и ее описания */
 .title-task {
@@ -562,6 +562,36 @@ details[open] {
     padding: 30px;
     height: 86px;
 }
+/* Стили для закрытия изображений после клика по ним для крестика */
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+    .close:hover {
+        opacity: 1;
+    }
+
+    .close:before, .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #333;
+    }
+
+    .close:before {
+        transform: rotate(45deg);
+    }
+
+    .close:after {
+        transform: rotate(-45deg);
+    }
 /* Стили для адаптивности */
 /* xs (<=543px) */
 @media (max-width: 575px) {
@@ -603,7 +633,9 @@ details[open] {
             margin: 0px 0 -15px;
         }
     #idTitle {
-        font-size: 10pt;
+        font-size: 10px;
+        line-height: 15px;
+        text-align: left;
     }
     p {
         font-family: 'Open Sans',sans-serif,Arial;
@@ -630,6 +662,13 @@ details[open] {
     .title-task {
         font-size: 10pt;
         font-weight: 900;
+    }
+    #idBtnDetails {
+        margin-bottom: -10px;
+        margin-top: 5px;
+    }
+    .dopClass {
+        margin-bottom: 5px;
     }
 }
 /* Стили страницы подробнее */

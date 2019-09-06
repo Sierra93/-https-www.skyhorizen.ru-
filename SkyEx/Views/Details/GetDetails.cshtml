@@ -23,7 +23,20 @@
     <script src="~/js/SlowScroll.js" asp-append-version="true"></script>
     <script src="~/js/GetRequest.js" asp-append-version="true"></script>
     <script src="~/js/GetDetails.js"></script>
+    <script src="~/js/ImagesOnClickDisplay.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    @* Нужны для открытия изображений на весь экран при клике по ним *@
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.7" type="text/css" media="screen" />
+    <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.7"></script>
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+    <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 </head>
 <body>
     <a id="arrow-up"></a>
@@ -63,27 +76,32 @@
         @* Выгрузка изображений моих работ *@
         @model IEnumerable<SkyEx.Models.FileModel>
         @foreach (var item in Model) {
-            <div id="idImages" class="col-lg-12 col-xs-12">
-                <div class="details-text col-lg-12 col-xs-12">
-                    <p id="idTitle">Страница: @item.Title</p>
-                    @*<p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>*@
-                    <p id="idTitle"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
-                </div>
-                <img id="individual" class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
-                @*<div class="fullName"> @item.FullName  <br /> </div>*@
-                @*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
-                <div class="block">
-                    <p id="idTTitle" class="hidden">@item.ID</p>
-
-                    @* Переходим на страницу подробностей о выбранной работе *@
-                    @*<div class="btnDetails">
-                            <a href="@Url.Action("GetDetails", "Details")" type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()">
-                                Подробнее
-                                @Html.ActionLink("Подробнее", "GetDetails", "Details")
-                            </a>
-                        </div>*@
-                </div>
+        <div id="idImages" class="col-lg-12 col-xs-12">
+            <div class="details-text col-lg-12 col-xs-12">
+                <p id="idTitle" class="dopClass">Страница: @item.Title</p>
+                @*<p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>*@
+                <p id="idTitle" class="dopClass"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
             </div>
+            <a class="fancybox-button" rel="fancybox-button" href="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" 
+               title="@item.Title">
+                <img id="individual" class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
+            </a>
+            @*<img id="individual" class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />*@
+            @*<div class="fullName"> @item.FullName  <br /> </div>*@
+            @*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
+            <div class="block">
+                <p id="idTTitle" class="hidden">@item.ID</p>
+
+                @* Переходим на страницу подробностей о выбранной работе *@
+                @*<div class="btnDetails">
+                <a href="@Url.Action("GetDetails", "Details")" type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()">
+                    Подробнее
+                    @Html.ActionLink("Подробнее", "GetDetails", "Details")
+                </a>
+            </div>*@
+            </div>
+
+        </div>
         }
     </div>
     @* Блок с кнопкой для подъема вверх *@
