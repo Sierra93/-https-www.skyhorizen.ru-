@@ -1,7 +1,4 @@
-﻿// JS НЕ ИСПОЛЬЗОВАЛ ДЛЯ РЕШЕНИЯ ЭТОЙ ЗАДАЧИ!!!!! ОБОШЕЛ ЭТОТ ПОДХОД ЧЕРЕЗ С# НА ФРОНТЕ!!!!!
-$(window).ready(function () {
-    //console.log("Детали доступны");
-});
+﻿window.addEventListener("load", function () { document.querySelectorAll(".btn-details")[10].style.display = "none"; });
 // Кнопка подробнее о проекте
 var onPressBtnDetails = () => {
     var result = "";
@@ -23,7 +20,6 @@ var onPressBtnDetails = () => {
         success: (data) => {
             result = "OK";
             console.log(result);
-            //window.location.href = 'https://localhost:44377/Details/Details';   // Для теста
         },
         error: (XMLHttpRequest, textStatus, errorThrown) => {
             result = "ERROR";

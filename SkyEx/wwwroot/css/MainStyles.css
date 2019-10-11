@@ -592,10 +592,18 @@ details[open] {
     .close:after {
         transform: rotate(-45deg);
     }
-/* Стили для адаптивности */
-/* xs (<=543px) */
-@media (max-width: 575px) {
-    .content {
+.brief {
+    color: cyan;
+    font-weight: 900;
+}
+    .brief:hover {
+        text-decoration: none;
+        color: red;
+    }
+    /* Стили для адаптивности */
+    /* xs (<=543px) */
+    @media (max-width: 575px) {
+        .content {
         margin-left: 0;
         margin-right: 0;
     }
