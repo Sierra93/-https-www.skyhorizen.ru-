@@ -27,30 +27,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     @* Нужно для красивого алерта используя плагин sweetalert *@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="~/icon.ico" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
-     @*Yandex.Metrika counter*@ 
+    @*Yandex.Metrika counter*@
     <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-                m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            ym(54692815, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
-            });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/54692815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-4093273026657960",
-                enable_page_level_ads: true
-            });
-        </script>
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(54692815, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/54692815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <a id="arrow-up"></a>
     <p class="up"> <a id="up"></a> </p>
@@ -339,11 +335,11 @@
                         </div>
                         <div class="col-lg-4 col-xs-12">
                             <img src="~/images/consultation.png" class="order-work" />
-                            <p> Я консультирую Вас по всем вопросам. Мы обсуждаем техническое задание, уточняем детали, оговориваем срок сдачи готового проекта и его стоимость. </p>
+                            <p> Я консультирую Вас по всем вопросам. Мы обсуждаем техническое задание, уточняем детали, оговориваем срок сдачи готового проекта и его стоимость. Вносите предоплату 10% от всей стоимости проекта. </p>
                         </div>
                         <div class="col-lg-4 col-xs-12">
                             <img src="~/images/prototype.png" class="order-work" />
-                            <p> Готовлю прототип сайта, предоставляю Вам. Вы вносите правки, я дорабатываю до устраивающего Вас результата. </p>
+                            <p> Готовлю прототип проекта, предоставляю Вам. Вы вносите правки, я дорабатываю до устраивающего Вас результата. </p>
                         </div>
                     </div>
                     @* Второй ряд *@
@@ -518,7 +514,7 @@
                         <div class="block details-text col-lg-12 col-xs-12">
                             <form asp-action="GetDetails" method="post" enctype="multipart/form-data" asp-controller="Details">
                                 <div class="form-group">
-                                    <input type="text" name="id" id="id" class="hidden" value="@item.ID" />
+                                    <input type="text" name="id" class="hidden" value="@item.ID" />
                                 </div>
                                 @*<p id="idTTitle">@item.ID</p>*@
                                 <p id="idTitle">@item.Title</p>

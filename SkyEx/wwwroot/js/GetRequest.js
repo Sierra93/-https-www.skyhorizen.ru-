@@ -1,6 +1,6 @@
 ﻿// Отправка заявки на бэк
 $(window).ready(function () {
-    console.log("Страница загружена");
+    
 });
 var onPressGetRequest = () => {
     console.log("onPressGetRequest");
