@@ -1,12 +1,14 @@
 ﻿// Отправка заявки на бэк
 $(window).ready(function () {
-    
+
 });
 var onPressGetRequest = () => {
     console.log("onPressGetRequest");
-    var sUserName = document.getElementById("idName").value;     // Получаем имя клиента
-    var sEmail = document.getElementById("idEmailOrNumber").value;    // Получаем почту или телефон
-    var sMultiText = document.getElementById("idMultiInput").value;    // Получаем описание проекта из мультиинпута
+    var sUserName = document.getElementById("idName").value;
+    var sEmail = document.getElementById("idEmailOrNumber").value;
+    var sMultiText = document.getElementById("idMultiInput").value;
+    var btnSend = document.getElementById("idBtnApplyRequest");
+    btnSend.disabled = true;
     // Отправляем данные на бэк
     return $.ajax({
         url: '/GetRequest/SaveRequest/',
@@ -18,9 +20,8 @@ var onPressGetRequest = () => {
             sMultiTextRequest: sMultiText
         },
         success: (data) => {
-            // Если успешно
             if (data === "OK") {
-                // В случае успешной отправки, очищаем все поля
+                btnSend.disabled = false;
                 document.getElementById("idName").value = "";
                 document.getElementById("idEmailOrNumber").value = "";
                 document.getElementById("idMultiInput").value = "";
@@ -34,6 +35,7 @@ var onPressGetRequest = () => {
         },
         error: (XMLHttpRequest, textStatus, errorThrown) => {
             console.log("request send error");
+            btnSend.disabled = false;
         }
     });
 };
