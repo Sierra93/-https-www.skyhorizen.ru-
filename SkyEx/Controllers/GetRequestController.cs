@@ -21,7 +21,7 @@ namespace SkyEx.Controllers {
         public string sResult = "";     // Флаг ошибки
         [HttpPost]
         // GetRequestModel - Модель данных, с которой здесь работаем
-        // Метод для работы с завками и сохраняем в БД
+        // Метод для работы с заявками и сохраняем в БД
         public async Task<JsonResult> SaveRequest(GetRequestModel request) {
             string connectionString = "Server=skyhorizen.ru,1433; Initial Catalog=u0772479_skydb; Persist Security Info=False; User ID=u0772479_admin; Password=K3sxb30*; MultipleActiveResultSets=False; Encrypt=True; TrustServerCertificate=true; Connection Timeout=30";
             using (SqlConnection strConn = new SqlConnection(connectionString)) {
@@ -39,7 +39,6 @@ namespace SkyEx.Controllers {
                         SqlCommand checkRequest = new SqlCommand(comandDB, strConn);   // Команда к БД 
                         strConn.Open();
                         // Проверем, существует ли заявка в БД 
-                        //if (checkRequest.ExecuteScalar() != null) {
                         using (var con = new SqlConnection(connectionString)) {
                             con.Open();
                             // Сохранение заявки в БД
@@ -49,7 +48,6 @@ namespace SkyEx.Controllers {
                                 await SendEmailAsync(request);
                             }
                         }
-                        //}   
                     }
                 }
                 catch (Exception ex) {
@@ -86,30 +84,5 @@ namespace SkyEx.Controllers {
                 new Exception(ex.Message.ToString());
             }
         }
-        //public JsonResult SendMessage(GetRequestModel request) {
-        //    MailMessage message = new MailMessage();
-        //    message.To.Add(new MailAddress("skyexx@mail.ru")); // кому отправлять  
-        //    message.Body = "Имя: " + request.sUserName + "\n" +
-        //        "E-mail или телефон: " + request.sEmailOrNumber + "\n" +
-        //        "Коротко о проекте: " + request.sMultiTextRequest;
-        //    SmtpClient client = new SmtpClient("smtp.mail.ru");
-        //    client.Port = 587; // указываем порт 
-        //    client.Credentials = new NetworkCredential("skyhorizen@skyhorizen.ru", "13467982dd");
-
-        //    client.Send(message);  // отправить  
-        //    //SmtpClient client = new SmtpClient("mail.hosting.reg.ru");
-        //    //client.EnableSsl = true;
-        //    //client.UseDefaultCredentials = false;
-        //    //client.Credentials = new NetworkCredential("skyhorizen@skyhorizen.ru", "13467982dd");
-        //    //MailMessage mailMessage = new MailMessage();
-        //    //mailMessage.From = new MailAddress("skyhorizen@skyhorizen.ru");
-        //    //mailMessage.To.Add("skyexx@mail.ru");
-        //    //mailMessage.Body = "Имя: " + request.sUserName + "\n" +
-        //    //    "E-mail или телефон: " + request.sEmailOrNumber + "\n" +
-        //    //    "Коротко о проекте: " + request.sMultiTextRequest;
-        //    //mailMessage.Subject = "Новая заявка";
-        //    //client.Send(mailMessage);
-        //    return Json(request);
-        //}
     }
 }

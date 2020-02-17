@@ -14,13 +14,13 @@ namespace SkyEx.Controllers {
         string connectionString = "Server=skyhorizen.ru,1433; Initial Catalog=u0772479_skydb; Persist Security Info=False; User ID=u0772479_admin; Password=K3sxb30*; MultipleActiveResultSets=False; Encrypt=True; TrustServerCertificate=true; Connection Timeout=30";
         // Переходим на страницу подробностей      
         //[HttpGet]
-        public IActionResult GetDetails(int id) {
-            var data = SearchInDB(id);
+        public async Task <IActionResult> GetDetails(int id) {
+            var data = await SearchInDB(id);
             return View(data);
         }
         // Будем искать в БД нужный проект  
         [HttpPost]
-        public List<FileModel> SearchInDB(int id) { 
+        public async Task <List<FileModel>> SearchInDB(int id) { 
             List<FileModel> imagePath = new List<FileModel>();
             using (var con = new SqlConnection(connectionString)) {
                 con.Open();
