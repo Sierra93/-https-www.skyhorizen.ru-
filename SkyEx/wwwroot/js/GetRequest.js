@@ -30,12 +30,12 @@ var onPressGetRequest = () => {
             }
             else {
                 swal("Не все обязательные поля заполнены!", "", "error");
+                btnSend.disabled = false;
                 return;
             }
         },
         error: (XMLHttpRequest, textStatus, errorThrown) => {
             console.log("request send error");
-            btnSend.disabled = false;
         }
     });
 };

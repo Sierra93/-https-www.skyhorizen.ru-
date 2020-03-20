@@ -1,12 +1,11 @@
-﻿window.addEventListener("load", function () { document.querySelectorAll(".btn-details")[10].style.display = "none"; });
+﻿window.addEventListener("load", function () {
+    document.querySelectorAll(".btn-details")[10].style.display = "none";
+    document.querySelectorAll(".container_kupiapp")[2].remove();
+});
 // Кнопка подробнее о проекте
 var onPressBtnDetails = () => {
     var result = "";
-    var selectedElem = $("#idImages:hover").find("p")[0].textContent;   // Получаем первый подходящий текст для поиска
-    //var replaceSelectedElem = selectedElem.replace("Описание:", "");
-    //var sr = replaceSelectedElem.split("\" ")[1];
-    //var str = sr.split(".");
-    //$("#idImages:hover").find("p")[0].textContent;   
+    var selectedElem = $("#idImages:hover").find("p")[0].textContent;   // Получаем первый подходящий текст для поиска 
     var strForBack = "";    // В эту переменную будем складывать результат строки и отправим на бэк
     // Ищем если в строке есть две кавычки, то будем сплитить строку и возьмем лишь то, что до двойных кавычек
     strForBack = selectedElem;
