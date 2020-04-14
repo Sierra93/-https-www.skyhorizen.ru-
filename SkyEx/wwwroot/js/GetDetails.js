@@ -1,5 +1,5 @@
 ﻿window.addEventListener("load", function () {
-    document.querySelectorAll(".btn-details")[10].style.display = "none";
+    document.querySelectorAll(".btn-details")[9].style.display = "none";
     document.querySelectorAll(".container_kupiapp")[2].remove();
 });
 // Кнопка подробнее о проекте
@@ -11,7 +11,7 @@ var onPressBtnDetails = () => {
     strForBack = selectedElem;
     return $.ajax({
         url: '/Details/GetDetails/',
-        type: "POST",
+        type: "POST", 
         dataType: "json",
         data: {
             ID: strForBack

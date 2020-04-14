@@ -548,6 +548,9 @@ details[open] {
 .work {
     margin-bottom: 15px;
 }
+.title-dev {
+    text-transform: none;
+}
 @keyframes radial-pulse {
     0% {
         /*box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);*/
