@@ -39,116 +39,121 @@
     <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 </head>
 <body>
-    <a id="arrow-up"></a>
-    <div class="container-fluid">
-        @*<div id="header" class="clearfix">*@
-        <div class="row">
-            @* Меню хидера *@
-            @* nav - помещает навигацию сайта и отдельные ссылки *@
-            @*<div role="navigation" class="navbar">*@
-            @* Элементы меню *@
-            <div class="container">
-                @* Реализация бургера при маленьком экране *@
-                <div class="navbar-header">
-                    @* data-target="#navbarCollapse" - при нажатии на кнопку мы будем отображать блок с id = navbarCollapse, т.е наше меню *@
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                        <span class="sr-only"> Toogle navigation </span>
-                        <span class="icon-bar"> </span>
-                        <span class="icon-bar"> </span>
-                        <span class="icon-bar"> </span>
-                    </button>
-                </div>
-                @* navbar-right - прижимает навигацию к правому краю *@
-                @* Здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
-                <div class="col-lg-12">
-                    <div id="navbarCollapse" class="collapse navbar-collapse">
-                        @* Список меню *@
-                        @* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
-                        <ul class="nav nav-pills">
-                            <li class="ui-box bottom-inOutSpread scrollto">@Html.ActionLink("Главная", "Index", "FileUpload")</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-12 col-xs-12">
-        @* Выгрузка изображений моих работ *@
-        @model IEnumerable<SkyEx.Models.FileModel>
-        @foreach (var item in Model) {
-        <div id="idImages" class="col-lg-12 col-xs-12">
-            <div class="details-text col-lg-12 col-xs-12">
-                <p id="idTitle" class="dopClass">Страница: @item.Title</p>
-                @*<p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>*@
-                <p id="idTitle" class="dopClass"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
-            </div>
-            <a class="fancybox-button" rel="fancybox-button" href="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" 
-               title="@item.Title">
-                <img id="individual" class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
-            </a>
-            @*<img id="individual" class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />*@
-            @*<div class="fullName"> @item.FullName  <br /> </div>*@
-            @*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
-            <div class="block">
-                <p id="idTTitle" class="hidden">@item.ID</p>
+	<div class="mask">
+		<div class="loader">
 
-                @* Переходим на страницу подробностей о выбранной работе *@
-                @*<div class="btnDetails">
-                <a href="@Url.Action("GetDetails", "Details")" type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()">
-                    Подробнее
-                    @Html.ActionLink("Подробнее", "GetDetails", "Details")
-                </a>
-            </div>*@
-            </div>
+		</div>
+	</div>
+	<a id="arrow-up"></a>
+	<div class="container-fluid">
+		@*<div id="header" class="clearfix">*@
+		<div class="row">
+			@* Меню хидера *@
+			@* nav - помещает навигацию сайта и отдельные ссылки *@
+			@*<div role="navigation" class="navbar">*@
+			@* Элементы меню *@
+			<div class="container">
+				@* Реализация бургера при маленьком экране *@
+				<div class="navbar-header">
+					@* data-target="#navbarCollapse" - при нажатии на кнопку мы будем отображать блок с id = navbarCollapse, т.е наше меню *@
+					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+						<span class="sr-only"> Toogle navigation </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+				</div>
+				@* navbar-right - прижимает навигацию к правому краю *@
+				@* Здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
+				<div class="col-lg-12">
+					<div id="navbarCollapse" class="collapse navbar-collapse">
+						@* Список меню *@
+						@* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
+						<ul class="nav nav-pills">
+							<li class="ui-box bottom-inOutSpread scrollto">@Html.ActionLink("Главная", "Index", "FileUpload")</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12 col-xs-12">
+		@* Выгрузка изображений моих работ *@
+		@model IEnumerable<SkyEx.Models.FileModel>
+		@foreach (var item in Model) {
+			<div id="idImages" class="col-lg-12 col-xs-12">
+				<div class="details-text col-lg-12 col-xs-12">
+					<p id="idTitle" class="dopClass">Страница: @item.Title</p>
+					@*<p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>*@
+					<p id="idTitle" class="dopClass"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
+				</div>
+				<a class="fancybox-button" rel="fancybox-button" href="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))"
+				   title="@item.Title">
+					<img id="individual" class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
+				</a>
+				@*<img id="individual" class="img-thumbnail" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />*@
+				@*<div class="fullName"> @item.FullName  <br /> </div>*@
+				@*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
+				<div class="block">
+					<p id="idTTitle" class="hidden">@item.ID</p>
 
-        </div>
-        }
-    </div>
-    @* Блок с кнопкой для подъема вверх *@
-    <div class="col-lg-12 col-xs-12 arr-up">
-        <a href="#arrow-up" class="scrollto"> <img src="~/images/arrow-up-new.png" class="arrow-up" /> </a>
-    </div>
-    @* Просто пустой блок над футером необходимый для отступа над футером *@
-    <div id="emptyBlock" class="col-lg-12 col-xs-12">
+					@* Переходим на страницу подробностей о выбранной работе *@
+					@*<div class="btnDetails">
+							<a href="@Url.Action("GetDetails", "Details")" type="button" class="btn fancy btn-1 btn-lg btn-details text-center" onclick="onPressBtnDetails()">
+								Подробнее
+								@Html.ActionLink("Подробнее", "GetDetails", "Details")
+							</a>
+						</div>*@
+				</div>
 
-    </div>
-    <footer class="footer">
-        <p> <a id="contacts"></a> </p>
-        <p> <a id="to-order"></a> </p>
-        <div class="col-lg-2">
+			</div>
+		}
+	</div>
+	@* Блок с кнопкой для подъема вверх *@
+	<div class="col-lg-12 col-xs-12 arr-up">
+		<a href="#arrow-up" class="scrollto"> <img src="~/images/arrow-up-new.png" class="arrow-up" /> </a>
+	</div>
+	@* Просто пустой блок над футером необходимый для отступа над футером *@
+	<div id="emptyBlock" class="col-lg-12 col-xs-12">
 
-        </div>
-        @* Блок слева *@
-        <div class="col-lg-4 col-xs-12 text-center">
-            <h3> Свяжитесь со мной </h3>
-            <label class="text-muted">
-                © 2019 Тимошенко Антон <br />
-                <label> E-mail:  </label> <a href="mailto:#"> skyhorizen@skyhorizen.ru </a>
-            </label> <br />
-            <label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Социальные сети: <a href="https://vk.com/skyhorizen"> ВКонтакте </a><br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
-            @*<a href="https://vk.com/sierrra"> <img src="https://pngicon.ru/file/uploads/vk-128x128.png" alt="Значок вк" class="vk"></a>*@
-        </div>
-        @* Блок справа *@
-        <div class="col-lg-4 col-xs-12 text-center">
-            <h3 class="text-center"> Или заполните форму </h3>
-            <div id="idPanelBody" class="panel-body">
-                <form role="form" class="text-center">
-                    <div class="form-group text-center">
-                        <input id="idName" type="text" value="" class="form-control input-lg" placeholder="*Ваше имя" />
-                    </div>
-                    <div class="form-group text-center">
-                        <input id="idEmailOrNumber" type="text" class="form-control input-lg" placeholder="*E-mail или телефон" />
-                    </div>
-                    <div class="form-group text-center">
-                        <textarea id="idMultiInput" name="for-project" cols="40" rows="40" class="form-control input-lg" placeholder="Коротко&nbsp;о&nbsp;проекте"></textarea>
-                    </div>
-                    <button type="button" id="idBtnApplyRequest" class="btn fancy btn-1 btn-sm btnToOrder text-center" onclick="onPressGetRequest()"> Заказать сайт </button>
-                </form>
-            </div>
-        </div>
-        <div class="col-lg-2">
+	</div>
+	<footer class="footer">
+		<p> <a id="contacts"></a> </p>
+		<p> <a id="to-order"></a> </p>
+		<div class="col-lg-2">
 
-        </div>
-    </footer>
+		</div>
+		@* Блок слева *@
+		<div class="col-lg-4 col-xs-12 text-center">
+			<h3> Свяжитесь со мной </h3>
+			<label class="text-muted">
+				© 2019 Тимошенко Антон <br />
+				<label> E-mail:  </label> <a href="mailto:#"> skyhorizen@skyhorizen.ru </a>
+			</label> <br />
+			<label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Социальные сети: <a href="https://vk.com/skyhorizen"> ВКонтакте </a><br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
+			@*<a href="https://vk.com/sierrra"> <img src="https://pngicon.ru/file/uploads/vk-128x128.png" alt="Значок вк" class="vk"></a>*@
+		</div>
+		@* Блок справа *@
+		<div class="col-lg-4 col-xs-12 text-center">
+			<h3 class="text-center"> Или заполните форму </h3>
+			<div id="idPanelBody" class="panel-body">
+				<form role="form" class="text-center">
+					<div class="form-group text-center">
+						<input id="idName" type="text" value="" class="form-control input-lg" placeholder="*Ваше имя" />
+					</div>
+					<div class="form-group text-center">
+						<input id="idEmailOrNumber" type="text" class="form-control input-lg" placeholder="*E-mail или телефон" />
+					</div>
+					<div class="form-group text-center">
+						<textarea id="idMultiInput" name="for-project" cols="40" rows="40" class="form-control input-lg" placeholder="Коротко&nbsp;о&nbsp;проекте"></textarea>
+					</div>
+					<button type="button" id="idBtnApplyRequest" class="btn fancy btn-1 btn-sm btnToOrder text-center" onclick="onPressGetRequest()"> Заказать сайт </button>
+				</form>
+			</div>
+		</div>
+		<div class="col-lg-2">
+
+		</div>
+	</footer>
 </body>
 </html>
