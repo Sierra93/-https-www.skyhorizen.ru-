@@ -551,6 +551,9 @@ details[open] {
 .title-dev {
     text-transform: none;
 }
+.advantages {
+    text-align: center;
+}
 @keyframes radial-pulse {
     0% {
         /*box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);*/
@@ -709,3 +712,4 @@ details[open] {
         margin-top: 700px;
     }
 }
+
