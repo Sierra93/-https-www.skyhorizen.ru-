@@ -715,6 +715,9 @@ details[open] {
 
 /*Для прелоадера.*/
 .mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, #6200ea, #d500f9);
@@ -722,23 +725,82 @@ details[open] {
     top: 0;
     z-index: 100;
     transition: 0.6s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
 }
 
 .loader {
-    width: 75px;
-    height: 75px;
-    border: 10px solid rgba(89, 196, 90, 0.6);
-    border-radius: 50%;
-    border-left-color: var(--green);
-    animation: loader 1.3s linear infinite;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.dot {
+    background: white;
+    margin: 5px;
+    -webkit-animation-name: loader;
+    animation-name: loader;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+    .dot:nth-child(1) {
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(2) {
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+    }
+
+    .dot:nth-child(3) {
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+    }
+
+    .dot:nth-child(4) {
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+    }
+
+    .dot:nth-child(5) {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+
+@-webkit-keyframes loader {
+    from {
+        width: 2px;
+        height: 2px;
+        border-radius: 1px;
+    }
+
+    to {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+    }
 }
 
 @keyframes loader {
-    100% {
-        transform: rotate(360deg);
+    from {
+        width: 2px;
+        height: 2px;
+        border-radius: 1px;
+    }
+
+    to {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
     }
 }
 
