@@ -72,5 +72,47 @@ namespace SkyEx.Controllers {
             }
             return imagePath;
         }
+
+        /// <summary>
+        /// Метод выбирает проекты определенной категории.
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
+        public async Task<IActionResult> GetCategoryProject(string category) {
+            var data = await GetCategoryProjects(category);
+            return View(data);
+        }
+
+        /// <summary>
+        /// Метод находит проекты выбранной категории.
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<List<FileModel>> GetCategoryProjects(string category) {
+            List<FileModel> imagePath = new List<FileModel>();  // Создаем коллекцию на основе полей модели
+            using (var con = new SqlConnection(connectionString)) {
+                con.Open();
+                using (var com = new SqlCommand("SELECT ID, TITLE, IMAGE_PATH, COMMENT_TASK, COMMENT_DETAILS, CATEGORY_PROJECT " +
+                    "FROM Portfolio " +
+                    "WHERE CATEGORY_PROJECT = " + "\'" + category + "\'", con)) {
+                    using (var reader = com.ExecuteReader()) {
+                        if (reader.HasRows) {
+                            while (reader.Read()) {
+                                imagePath.Add(new FileModel {
+                                    ID = Convert.ToInt32(reader["ID"]),
+                                    Title = reader["TITLE"].ToString(),
+                                    ImagePath = reader["IMAGE_PATH"].ToString(),
+                                    CommentTask = reader["COMMENT_TASK"].ToString(),
+                                    CommentDetails = reader["COMMENT_DETAILS"].ToString(),
+                                    Category = reader["CATEGORY_PROJECT"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            return imagePath;
+        }
     }
 }

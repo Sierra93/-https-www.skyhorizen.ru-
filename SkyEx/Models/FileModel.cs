@@ -14,5 +14,7 @@ namespace SkyEx.Models {
         public string CommentTask { get; set; }
         // Описание задачи
         public string CommentDetails { get; set; }
+        // Категория проекта.
+        public string Category { get; set; }    
     }
 }

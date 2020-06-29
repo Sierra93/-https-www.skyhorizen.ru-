@@ -143,9 +143,9 @@
 					<p> <strong> Специализация: </strong> Разработка веб-приложений (сайтов и корпоративных систем (ERP, CRM)), клиент-серверных и мобильных приложений. </p>
 					<p> <strong> Опыт работы:  </strong> 4,5 года. </p>
 					<p>
-						<strong> Используемые технологии: </strong> <br />
-						Front-end: HTML5, CSS3, Bootstrap, LESS, Javascript, jQuery, Vue.js. <br />
-						Back-end (моя сильная сторона): C# + ASP.NET Core MVC, Web API, SQL Server или MySQL, Entity Framework Core, LINQ.
+						<strong> Мой технологический стек: </strong> <br />
+						Front-end: HTML, CSS, Bootstrap, LESS или SCSS, JavaScript (es5, es6), jQuery, Vue.js. <br />
+						Back-end (моя сильная сторона): C# + ASP.NET MVC/ASP.NET Core MVC/ASP.NET Core Web API, SQL Server или MySQL, Entity Framework Core или Dapper, LINQ.
 					</p>
 				</div>
 				<div class="empty">
@@ -495,8 +495,9 @@
 								<summary> Индивидуальный проект </summary>
 								<p> <strong> Срок: </strong> сроки после ТЗ </p>
 								<p> <strong> Стоимость: </strong> стоимость после ТЗ </p>
-								<p> Под данной услугой понимается разработка вашего индивидуального проекта, который не относится ни к одной из указанных категорий.  </p>
+								<p> Под данной услугой понимается разработка индивидуального проекта, который не относится ни к одной из указанных категорий.</p>
 								<p> Например web-приложение, desktop-приложение, мобильное приложение (под IOS или Android), написание модулей, библиотек, web-сервисов, интеграция со сторонними API. </p>
+								<p>Также занимаюсь разработкой корпоративных систем (специализированные ERP-системы, CRM-модули для ERP, а также разрабатываю другие модули).</p>
 							</details>
 						</div>
 					</div>
@@ -511,7 +512,28 @@
 					<p class="section-title"> Мои работы </p>
 					<span class="border">  </span>
 					<p> Ниже вы можете просмотреть список моих работ, которые я делал. </p>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Сайт-визитка" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Сайт-визитка
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Landing Page" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Landing Page
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Интернет-магазин" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Интернет-магазин
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Корпоративный сайт" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Корпоративный сайт
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Индивидуальный проект" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Индивидуальные проекты
+					</a>
 				</div>
+			
 				@* Выгрузка изображений моих работ *@
 				@model IEnumerable<SkyEx.Models.FileModel>
 				@foreach (var item in Model) {
@@ -531,9 +553,9 @@
 								@* Переходим на страницу подробностей о выбранной работе *@
 								<div class="btnDetails">
 									@*<a href="@Url.Action("GetDetails", "Details")" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center" onclick="onPressBtnDetails()">
-											Подробнее
-											@Html.ActionLink("Подробнее", "GetDetails", "Details")
-										</a>*@
+								Подробнее
+								@Html.ActionLink("Подробнее", "GetDetails", "Details")
+							</a>*@
 									<div id="idBtnDetails" class="form-group">
 										<input type="submit" value="Подробнее" class="btn fancy btn-1 btn-sm btn-details text-center" />
 									</div>

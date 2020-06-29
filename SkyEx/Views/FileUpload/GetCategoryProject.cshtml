@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title> Частный Full-stack Middle .NET Developer - Тимошенко Антон </title>
+	<meta name="yandex-verification" content="572250a50f996c4e" />
+	<meta name="yandex-verification" content="834d062f6beb3e2b" />
+	<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+	<link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" asp-append-version="true" />
+	<link href="~/css/MainStyles.css" rel="stylesheet" asp-append-version="true" />
+	<link href="~/css/HeaderStyles.css" rel="stylesheet" asp-append-version="true" />
+	<link href="~/css/FooterStyles.css" rel="stylesheet" asp-append-version="true" />
+	<link href="~/css/fm.revealator.jquery.min.css" rel="stylesheet" />
+	<script src="~/lib/jquery/dist/fm.revealator.jquery.min.js"></script>
+	<script src="~/lib/jquery/dist/jquery-1.11.3.min.js"></script>
+	@* Нужно для анимации подчеркивания ссылок хидера *@
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css" />
+	<script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114307968-1"></script>
+	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+	<script src="~/js/SlowScroll.js" asp-append-version="true"></script>
+	<script src="~/js/GetRequest.js" asp-append-version="true"></script>
+	<script src="~/js/GetDetails.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	@* Нужно для красивого алерта используя плагин sweetalert *@
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="~/icon.ico" asp-append-version="true" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="mask">
+		<div class="loader">
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
+	</div>
+	@*Yandex.Metrika counter*@
+	<script type="text/javascript">
+		(function (m, e, t, r, i, k, a) {
+			m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+			m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+		})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+		ym(54692815, "init", {
+			clickmap: true,
+			trackLinks: true,
+			accurateTrackBounce: true,
+			webvisor: true
+		});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/54692815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+	<a id="arrow-up"></a>
+	@* Блок хидера *@
+	@* container-fluid - растягивает хидер на всю ширину экрана *@
+	@*<a id="about"></a>*@
+	<div class="container-fluid">
+		@*<div id="header" class="clearfix">*@
+		<div class="row">
+			@* Меню хидера *@
+			@* nav - помещает навигацию сайта и отдельные ссылки *@
+			@*<div role="navigation" class="navbar">*@
+			@* Элементы меню *@
+			<div class="container">
+				@* Реализация бургера при маленьком экране *@
+				<div class="navbar-header">
+					@* data-target="#navbarCollapse" - при нажатии на кнопку мы будем отображать блок с id = navbarCollapse, т.е наше меню *@
+					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+						<span class="sr-only"> Toogle navigation </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+				</div>
+				@* navbar-right - прижимает навигацию к правому краю *@
+				@* Здесь id="navbarCollapse" нужен для того, чтобы на мобильных устройствах появился бургер с вертикальным меню *@
+				<div class="col-lg-12">
+					<div id="navbarCollapse" class="collapse navbar-collapse">
+						@* Список меню *@
+						@* class="active" - означает активную вкладку меню, которая изначально подсвечивается *@
+						<ul class="nav nav-pills">
+							<li class="ui-box bottom-inOutSpread scrollto">@Html.ActionLink("Главная", "Index", "FileUpload")</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@* Блок, в который нужно всегда оборачивать весь контент страницы, иначе не будет работать адаптивность *@
+	<div class="wrapper">
+		@* Блок мои работы *@
+		<div id="idPortfolio" class="col-lg-12 col-xs-12">
+			<div class="content">
+				<div class="col-lg-12 col-xs-12 work">
+					<p><a id="works"></a></p>
+					<p class="section-title"> Мои работы </p>
+					<span class="border">  </span>
+
+					@foreach (var item in Model) {
+						<p> Ниже вы можете просмотреть список моих работ категории <strong>«@item.Category».</strong> </p>
+						break;
+					}
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Сайт-визитка" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Сайт-визитка
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Landing Page" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Landing Page
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Интернет-магазин" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Интернет-магазин
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Корпоративный сайт" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Корпоративный сайт
+					</a>
+
+					<a href="@Url.Action("GetCategoryProject", "FileUpload", new { category = "Индивидуальный проект" })" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center">
+						Индивидуальные проекты
+					</a>
+				</div>
+
+				@* Выгрузка изображений моих работ *@
+				@model IEnumerable<SkyEx.Models.FileModel>
+				@foreach (var item in Model) {
+					<div id="idImages" class="col-lg-12 col-xs-12">
+						<img class="img-thumbnail imgFromBack" src="@Url.Content(item.ImagePath.Replace("wwwroot", "~"))" /> <br />
+						@*<div class="fullName"> @item.FullName  <br /> </div>*@
+						@*<span id="idLinkSite" class="photobox__label"> <a href="@item.LinkSite" id="idLinkSite"> @item.LinkSite </a> </span>*@
+						<div class="block details-text col-lg-12 col-xs-12">
+							<form asp-action="GetDetails" method="post" enctype="multipart/form-data" asp-controller="Details">
+								<div class="form-group">
+									<input type="text" name="id" class="hidden" value="@item.ID" />
+								</div>
+								@*<p id="idTTitle">@item.ID</p>*@
+								<p id="idTitle">@item.Title</p>
+								<p id="idTitle"><span class="title-task">Задача:</span><br />@item.CommentTask</p>
+								<p id="idTitle"><span class="title-task">Описание:</span><br />@item.CommentDetails</p>
+								@* Переходим на страницу подробностей о выбранной работе *@
+								<div class="btnDetails">
+									@*<a href="@Url.Action("GetDetails", "Details")" type="button" id="idSignIn" class="btn fancy btn-1 btn-sm btn-details text-center" onclick="onPressBtnDetails()">
+											Подробнее
+											@Html.ActionLink("Подробнее", "GetDetails", "Details")
+										</a>*@
+									<div id="idBtnDetails" class="form-group">
+										<input type="submit" value="Подробнее" class="btn fancy btn-1 btn-sm btn-details text-center" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+
+	@* Блок с кнопкой для подъема вверх *@
+	<div class="col-lg-12 col-xs-12 arr-up">
+		<a href="#arrow-up" class="scrollto"> <img src="~/images/arrow-up-new.png" class="arrow-up" /> </a>
+	</div>
+	@* Просто пустой блок над футером необходимый для отступа над футером *@
+	<div class="col-lg-12 col-xs-12" id="emptyBlock">
+
+	</div>
+	@* Блок футера *@
+	<footer class="footer">
+		<p> <a id="contacts"></a> </p>
+		<p> <a id="to-order"></a> </p>
+		<div class="col-lg-2">
+
+		</div>
+		@* Блок слева *@
+		<div class="col-lg-4 col-xs-12 text-center">
+			<h3> Свяжитесь со мной </h3>
+			<label class="text-muted">
+				© 2019-2020 Тимошенко Антон <br />
+				<label> E-mail:  </label> <a class="brief" href="mailto:#"> skyhorizen@skyhorizen.ru </a>
+			</label> <br />
+			<label class="text-muted"> тел. и WhatsApp: +7(985)-683-80-46 <br /> Социальные сети: <a class="brief" href="https://vk.com/skyhorizen"> ВКонтакте </a><br /> Пн. – Вс. С 10:00 до 23:00 <br /> </label>
+			@*<a href="https://vk.com/sierrra"> <img src="https://pngicon.ru/file/uploads/vk-128x128.png" alt="Значок вк" class="vk"></a>*@
+		</div>
+		@* Блок справа *@
+		<div class="col-lg-4 col-xs-12 text-center">
+			<h3 class="text-center"> Или заполните форму </h3>
+			<div id="idPanelBody" class="panel-body">
+				<form role="form" class="text-center">
+					<div class="form-group text-center">
+						<input id="idName" type="text" value="" class="form-control input-lg" placeholder="*Ваше имя" />
+					</div>
+					<div class="form-group text-center">
+						<input id="idEmailOrNumber" type="text" class="form-control input-lg" placeholder="*E-mail или телефон" />
+					</div>
+					<div class="form-group text-center">
+						<textarea id="idMultiInput" name="for-project" cols="40" rows="40" class="form-control input-lg" placeholder="Коротко&nbsp;о&nbsp;проекте"></textarea>
+					</div>
+					<button type="button" id="idBtnApplyRequest" class="btn fancy btn-1 btn-sm btnToOrder text-center" onclick="onPressGetRequest()"> Заказать сайт </button>
+				</form>
+			</div>
+		</div>
+		<div class="col-lg-2">
+
+		</div>
+	</footer>
+	<!-- Вставьте эти теги в самый низ страницы вашего сайта -->
+	<script src="https://feedbackcloud.kupiapp.ru/widget/widget.js" type="text/javascript"></script>
+	<script type="text/javascript">document.addEventListener("DOMContentLoaded", feedback_vk.init({ id: 'feedback_vk', gid: 185578264 }));</script>
+</body>
+</html>

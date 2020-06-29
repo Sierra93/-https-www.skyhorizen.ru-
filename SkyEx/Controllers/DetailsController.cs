@@ -17,7 +17,8 @@ namespace SkyEx.Controllers {
         public async Task <IActionResult> GetDetails(int id) {
             var data = await SearchInDB(id);
             return View(data);
-        }
+        }        
+
         // Будем искать в БД нужный проект  
         [HttpPost]
         public async Task <List<FileModel>> SearchInDB(int id) { 
