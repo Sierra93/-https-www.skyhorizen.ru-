@@ -807,3 +807,7 @@ details[open] {
 .hide {
     opacity: 0;
 }
+
+.work > a {
+    margin: 5px 0px;
+}
