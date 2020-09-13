@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <ApplicationIcon>wwwroot\icon.ico</ApplicationIcon>
     <Win32Resource></Win32Resource>
+    <UserSecretsId>3a2085e8-3288-4689-b242-76137ca33a31</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
