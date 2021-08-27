@@ -65,8 +65,8 @@ namespace SkyEx.Controllers {
         public async Task SendEmailAsync(GetRequestModel request) {
             try {
                 var emailMessage = new MimeMessage();
-                emailMessage.From.Add(new MailboxAddress("skyhorizen@skyhorizen.ru"));
-                emailMessage.To.Add(new MailboxAddress("skyhorizen@skyhorizen.ru"));
+                emailMessage.From.Add(new MailboxAddress("sierra_93@mail.ru"));
+                emailMessage.To.Add(new MailboxAddress("sierra_93@mail.ru"));
                 emailMessage.Subject = "Новая заявка";
                 emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html) {
                     Text = "Имя: " + request.sUserName + "</br>" +
@@ -74,8 +74,8 @@ namespace SkyEx.Controllers {
                 "Коротко о проекте: " + request.sMultiTextRequest
                 };
                 using (var client = new SmtpClient()) {
-                    await client.ConnectAsync("mail.hosting.reg.ru", 587, MailKit.Security.SecureSocketOptions.StartTls);
-                    await client.AuthenticateAsync("skyhorizen@skyhorizen.ru", "13467982dd");
+                    await client.ConnectAsync("smtp.mail.ru", 2525, MailKit.Security.SecureSocketOptions.StartTls);
+                    await client.AuthenticateAsync("sierra_93@mail.ru", "13467kvm");
                     await client.SendAsync(emailMessage);
                     await client.DisconnectAsync(true);
                 }
